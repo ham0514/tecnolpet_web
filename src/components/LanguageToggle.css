@@ -1,0 +1,28 @@
+.lang-toggle {
+  display: inline-flex;
+  border: 1px solid var(--steel-dim);
+  background: rgba(0, 0, 0, 0.25);
+  overflow: hidden;
+}
+
+.lang-toggle button {
+  appearance: none;
+  border: 0;
+  background: transparent;
+  color: var(--steel);
+  padding: 0.4rem 0.65rem;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+  cursor: pointer;
+}
+
+.lang-toggle button.is-active {
+  background: var(--brand-orange);
+  color: var(--ink);
+  font-weight: 700;
+}
+
+.lang-toggle button:hover:not(.is-active) {
+  color: var(--snow);
+}

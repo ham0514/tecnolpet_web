@@ -1,0 +1,31 @@
+.about-intro {
+  max-width: 48rem;
+}
+
+.about-blocks {
+  margin-top: 2rem;
+}
+
+.about-card {
+  padding: 1.4rem;
+  min-height: 100%;
+}
+
+.about-card h2,
+.about-card h3 {
+  font-size: 1.35rem;
+  margin-bottom: 0.75rem;
+}
+
+.about-sustainability {
+  border-top: 1px solid var(--steel-dim);
+  background: linear-gradient(180deg, rgba(242, 148, 0, 0.04), transparent);
+}
+
+.about-sustainability__body {
+  max-width: 48rem;
+}
+
+.about-related {
+  margin-top: 2rem;
+}

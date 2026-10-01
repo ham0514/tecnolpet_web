@@ -1,0 +1,42 @@
+.accred-card {
+  padding: 1.6rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  min-height: 100%;
+}
+
+.accred-card__code {
+  color: var(--brand-orange);
+  margin: 0;
+}
+
+.accred-card h2 {
+  font-size: 1.45rem;
+  margin: 0;
+}
+
+.accred-card__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  margin-top: auto;
+  padding-top: 0.5rem;
+  color: var(--brand-orange);
+  font-family: var(--font-display);
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  border-bottom: 1px solid transparent;
+  width: fit-content;
+  transition: border-color 0.2s, color 0.2s;
+}
+
+.accred-card__link:hover {
+  color: var(--brand-orange-hot);
+  border-bottom-color: var(--brand-orange-hot);
+}
+
+.accred-body {
+  margin-top: 2rem;
+  max-width: 48rem;
+}

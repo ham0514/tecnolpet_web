@@ -1,0 +1,26 @@
+:root {
+  --brand-orange: #f29400;
+  --brand-orange-hot: #ffb347;
+  --brand-orange-dim: rgba(242, 148, 0, 0.16);
+  --ink: #0b0b0c;
+  --graphite: #1a1a1c;
+  --graphite-2: #242428;
+  --steel: #8b8c8e;
+  --steel-dim: rgba(139, 140, 142, 0.35);
+  --snow: #f5f5f5;
+  --snow-soft: rgba(245, 245, 245, 0.72);
+  --danger: #ff5c5c;
+  --success: #3ecf8e;
+
+  --font-display: "Syne", system-ui, sans-serif;
+  --font-body: "Space Grotesk", system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, monospace;
+
+  --header-h: 5rem;
+  --section-pad: clamp(4rem, 8vw, 7.5rem);
+  --content: 72rem;
+  --radius: 2px;
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+
+  color-scheme: dark;
+}

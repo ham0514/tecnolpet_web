@@ -1,0 +1,39 @@
+.contact-grid {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+}
+
+.contact-info {
+  padding: 1.5rem;
+  display: grid;
+  gap: 1.25rem;
+}
+
+.contact-info .accent {
+  color: var(--brand-orange);
+}
+
+.contact-map {
+  margin-top: 0.75rem;
+  border: 1px solid var(--steel-dim);
+  overflow: hidden;
+  min-height: 220px;
+}
+
+.contact-map iframe {
+  border: 0;
+  display: block;
+  filter: grayscale(0.35) contrast(1.05);
+}
+
+.contact-form-title {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+@media (max-width: 900px) {
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+}

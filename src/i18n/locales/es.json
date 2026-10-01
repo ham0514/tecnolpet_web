@@ -1,0 +1,349 @@
+{
+  "meta": {
+    "siteName": "Tecnolpet S.A.",
+    "tagline": "Inspección acreditada. Calidad garantizada."
+  },
+  "nav": {
+    "home": "Inicio",
+    "about": "Acerca de",
+    "services": "Servicios",
+    "apps": "Aplicaciones",
+    "accreditations": "Acreditaciones",
+    "sustainability": "Sustentabilidad",
+    "contact": "Contacto",
+    "faq": "FAQ",
+    "consultas": "Consultas",
+    "empleo": "Empleo",
+    "quejas": "Quejas y Apelaciones",
+    "denuncias": "Denuncias",
+    "privacy": "Privacidad",
+    "terms": "Términos",
+    "cta": "Solicitar inspección"
+  },
+  "lang": {
+    "es": "ES",
+    "en": "EN",
+    "label": "Idioma"
+  },
+  "home": {
+    "kicker": "Organismo de inspección · ISO/IEC 17020",
+    "headline": "Precisión industrial para la Amazonía energética",
+    "sub": "Somos líderes en ensayos no destructivos y servicios de inspección para petróleo, gas e industria en Ecuador.",
+    "ctaPrimary": "Hablar con un experto",
+    "ctaSecondary": "Ver servicios NDT",
+    "trustIso": "ISO/IEC 17020",
+    "trustQms": "ISO 9001:2015",
+    "trustNdt": "VT · MT · PT · UT · UTPA",
+    "trustRegion": "Orellana, Ecuador",
+    "whyTitle": "Por qué preferirnos",
+    "whyLead": "Trayectoria, integridad y tecnología aplicada a cada orden de trabajo.",
+    "why": {
+      "quality": { "title": "Calidad", "body": "Servicios entregados bajo los más altos estándares, con procesos certificados." },
+      "tech": { "title": "Tecnología", "body": "La técnica correcta para cada activo: valor medible para el cliente." },
+      "integrity": { "title": "Integridad", "body": "Código de conducta inquebrantable. La imparcialidad es nuestra garantía." },
+      "pros": { "title": "Profesionales", "body": "Equipos que se adaptan a los desafíos reales de la industria." }
+    },
+    "servicesTitle": "Segmentos de servicio",
+    "servicesLead": "Cinco líneas integradas para maximizar la capacidad operacional de su operación.",
+    "segments": {
+      "ndt": { "title": "Inspección NDT", "body": "VT, PT, MT, UT y UTPA acreditados." },
+      "tools": { "title": "Herramientas y equipos", "body": "Venta y renta para operaciones de campo." },
+      "tests": { "title": "Tensión / Presión / Carga", "body": "Ensayos destructivos y certificación de izaje." },
+      "general": { "title": "Servicios generales", "body": "Soporte complementario para tubería y herramientas." }
+    },
+    "aboutTitle": "Socio estratégico en NDT",
+    "aboutBody": "Ubicados en la región amazónica del Ecuador, integramos talento humano y tecnología para inspecciones confiables en petróleo, gas e industria general.",
+    "aboutCta": "Conocer Tecnolpet",
+    "quotesTitle": "Historias de clientes",
+    "quotesLead": "Cooperación real, resultados medibles.",
+    "quotes": {
+      "q1": {
+        "name": "Luis Silva",
+        "place": "Francisco de Orellana",
+        "text": "Soporte excepcional en inspección de tuberías y herramientas. Recomendamos su servicio."
+      },
+      "q2": {
+        "name": "Emilia Farías",
+        "place": "Francisco de Orellana",
+        "text": "Compromiso proactivo en cada llamado. Siempre dispuestos a cubrir los requerimientos."
+      }
+    },
+    "ctaBandTitle": "Listos para su próxima inspección",
+    "ctaBandBody": "Nuestro equipo responde 7 días a la semana en horarios de operación.",
+    "ctaBandBtn": "Contactar ahora"
+  },
+  "about": {
+    "title": "Acerca de Tecnolpet",
+    "lead": "Comprometidos con productos y servicios de calidad para la industria del petróleo y gas.",
+    "intro": "Ubicada en Orellana, Tecnolpet desarrolla soluciones para clientes estatales y privados, maximizando la capacidad operacional con cinco segmentos principales: NDT, venta/renta de equipos, pruebas de tensión/presión/carga y servicios generales.",
+    "missionTitle": "Misión",
+    "mission": "Proveemos herramientas, equipos y servicios de alta calidad que superan las expectativas, con alto compromiso en seguridad de las personas y cuidado del medio ambiente.",
+    "visionTitle": "Visión",
+    "vision": "Ser la compañía preferida y referente en la provisión de recursos y servicios en petróleo y gas en la región amazónica.",
+    "qualityTitle": "Política de calidad",
+    "quality": "Crecimiento y satisfacción total del cliente mediante inspección y ensayos que alcanzan o exceden expectativas, con mejora continua del sistema de gestión.",
+    "socialTitle": "Política social",
+    "social": "Ser referente en principios y valores; cooperar con la colectividad en buenas prácticas sociales.",
+    "confTitle": "Confidencialidad",
+    "conf": "Empleados y subcontratistas protegen la información no pública de clientes y proveedores; solo se usa para fines autorizados.",
+    "impartialTitle": "Imparcialidad",
+    "impartial": "Alta gerencia y todo el cuerpo de trabajo actúan con integridad bajo un código de conducta claro.",
+    "digitalTitle": "Firmas digitales",
+    "digital": "Todos nuestros reportes se firman mediante certificados digitales / firma electrónica.",
+    "historyTitle": "Historia",
+    "history": "Desde 2015 construimos capacidades NDT y de ensayos en la Amazonía ecuatoriana, evolucionando con las demandas de la industria."
+  },
+  "services": {
+    "title": "Nuestros servicios",
+    "lead": "NDT, ensayos de tensión/carga y servicios complementarios con certificación internacional.",
+    "intro": "Especialistas en END e inspección en todo el Ecuador: VT, MT, PT, UT, UTPA, izaje, tanques, tubería, herramientas y equipos, más ensayos destructivos por tensión y carga.",
+    "ndtTitle": "Categoría inspección NDT",
+    "testsTitle": "Categoría ensayos",
+    "items": {
+      "vt": { "code": "VT", "title": "Inspección visual-dimensional", "body": "Servicio VT acreditado para cada técnica aplicable." },
+      "mt": { "code": "MT", "title": "Partículas magnéticas", "body": "Inspección MT acreditada para detección de discontinuidades superficiales." },
+      "pt": { "code": "PT", "title": "Líquidos penetrantes", "body": "Inspección PT acreditada con procesos controlados." },
+      "ut": { "code": "UT", "title": "Ultrasonido industrial", "body": "Espesores acreditados y UTPA de alto rendimiento." },
+      "tension": { "code": "TST", "title": "Pruebas de tensión", "body": "Tensión en elementos y accesorios de izaje." },
+      "load": { "code": "LOAD", "title": "Pruebas de carga", "body": "Certificación de tecle, elementos, grúas y más." },
+      "extra": { "code": "SVC", "title": "Servicios complementarios", "body": "Mantenimiento preventivo y correctivo para herramientas y tubería." }
+    },
+    "trust": "Servicio confiado por más de 100 clientes locales, con política de calidad y código de conducta en cada entrega."
+  },
+  "apps": {
+    "title": "Nuestras aplicaciones",
+    "lead": "Plataformas para clientes, colaboradores y candidatos.",
+    "intro": "Las aplicaciones y sistemas provistos cuentan con los permisos necesarios y están sujetos al monitoreo permanente de Tecnolpet. Empleados y clientes pueden obtener acceso según la finalidad de uso, contactando al departamento de seguridad informática.",
+    "open": "Abrir aplicación",
+    "note": "Si necesita acceso o tiene dudas sobre su cuenta, escríbanos a mail@tecnolpet.com o llame al +593-62378070.",
+    "items": {
+      "fastdoing": {
+        "title": "FastDoing",
+        "subtitle": "Sistema de reportes",
+        "body": "Acceso a cotizaciones, órdenes de trabajo, reportes y certificados de inspección, notas de entrega y encuestas de servicio. Todos nuestros clientes tienen cuenta de acceso."
+      },
+      "tecu": {
+        "title": "TecUniversity",
+        "subtitle": "Sistema de entrenamiento",
+        "body": "Plataforma de entrenamiento para empleados y colaboradores de Tecnolpet S.A. Si requiere acceso o forma parte de nuestro grupo de entrenamiento, contáctenos."
+      },
+      "candidato": {
+        "title": "Candidato",
+        "subtitle": "Evaluación de candidatos",
+        "body": "Si participa en un proceso de contratación y le habilitaron una cuenta, ingrese aquí para ser evaluado según el perfil asignado. El proceso es monitoreado por los evaluadores."
+      },
+      "email": {
+        "title": "Email Web",
+        "subtitle": "Correo corporativo",
+        "body": "Si es parte de nuestro equipo o consultor con cuenta de correo Tecnolpet, puede acceder al correo desde el servidor web corporativo."
+      }
+    }
+  },
+  "accreditations": {
+    "title": "Acreditaciones",
+    "lead": "Nuestro proceso de calidad y acreditación como organismo de inspección.",
+    "iso17020": "Organismo de inspección acreditado ISO/IEC 17020.",
+    "iso9001": "Sistema de gestión de calidad certificado ISO 9001:2015.",
+    "scopeLink": "Ver alcance de acreditación",
+    "body": "La acreditación respalda la competencia técnica, la imparcialidad y la consistencia de nuestros métodos NDT y de ensayos. Cada informe refleja trazabilidad y firmas digitales."
+  },
+  "sustainability": {
+    "title": "Sustentabilidad",
+    "lead": "Compromiso organizacional con el cuidado del planeta.",
+    "body": "Desarrollamos políticas de conservación y operamos con enfoque íntegro en el cliente, priorizando seguridad de las personas y respeto al entorno amazónico donde trabajamos.",
+    "pillars": {
+      "p1": { "title": "Personas primero", "body": "Seguridad laboral como condición no negociable." },
+      "p2": { "title": "Entorno amazónico", "body": "Prácticas que minimizan impacto en la región." },
+      "p3": { "title": "Mejora continua", "body": "El sistema de gestión evoluciona con cada proyecto." }
+    }
+  },
+  "contact": {
+    "title": "Contacto",
+    "lead": "Esté en contacto con nosotros. Nuestro equipo está listo para ayudarlo.",
+    "addressLabel": "Dirección",
+    "address": "Km 7 Vía Orellana - Lago Agrio, El Coca, Orellana, Ecuador.",
+    "phoneLabel": "Llámanos",
+    "phone": "+593-62378070 Ext 1101",
+    "emailLabel": "Escríbenos",
+    "email": "mail@tecnolpet.com",
+    "hoursLabel": "Horario",
+    "hours": "Dom – Sáb: 07:00 – 17:30",
+    "formTitle": "Enviar mensaje",
+    "name": "Nombre",
+    "company": "Empresa",
+    "emailField": "Email",
+    "phoneField": "Teléfono",
+    "message": "Mensaje",
+    "submit": "Enviar",
+    "sending": "Enviando…",
+    "success": "Mensaje enviado. Nos pondremos en contacto pronto.",
+    "error": "No se pudo enviar. Intente de nuevo o escriba a mail@tecnolpet.com.",
+    "mapNote": "Ubicación en El Coca, Orellana."
+  },
+  "faq": {
+    "title": "Preguntas frecuentes",
+    "lead": "Respuestas rápidas sobre inspección, acreditación y cobertura.",
+    "items": {
+      "i1": { "q": "¿Qué métodos NDT ofrecen?", "a": "VT, MT, PT, UT y UTPA, además de ensayos de tensión y carga." },
+      "i2": { "q": "¿Están acreditados?", "a": "Sí. Operamos como organismo de inspección ISO/IEC 17020 con SGC ISO 9001:2015." },
+      "i3": { "q": "¿Dónde operan?", "a": "Base en Orellana (El Coca), con cobertura de servicios en Ecuador." },
+      "i4": { "q": "¿Los reportes tienen firma electrónica?", "a": "Sí. Los reportes se firman con certificados digitales." }
+    }
+  },
+  "consultas": {
+    "title": "Consultas",
+    "lead": "Cuéntenos su requerimiento de inspección o ensayo.",
+    "submit": "Enviar consulta"
+  },
+  "empleo": {
+    "title": "Empleo",
+    "lead": "Únase a un equipo que vive la excelencia en NDT.",
+    "body": "Buscamos profesionales apasionados por la inspección industrial, la seguridad y la integridad. Envíe su postulación y nos pondremos en contacto.",
+    "submit": "Enviar postulación",
+    "role": "Perfil / cargo de interés",
+    "cv": "Enlace a CV o nota"
+  },
+  "quejas": {
+    "title": "Quejas y apelaciones",
+    "lead": "Canal formal para reclamos sobre nuestros servicios.",
+    "body": "Tecnolpet atiende quejas y apelaciones con imparcialidad. Describa el caso, el servicio involucrado y la evidencia disponible. Recibirá respuesta por los canales oficiales.",
+    "submit": "Registrar queja"
+  },
+  "denuncias": {
+    "title": "Denuncias",
+    "lead": "Anticorrupción, soborno y acoso laboral.",
+    "antiTitle": "Anticorrupción y soborno",
+    "anti": "Rechazamos cualquier forma de corrupción o soborno. Las denuncias se tratan con confidencialidad y sin represalias indebidas.",
+    "harassTitle": "Acoso laboral",
+    "harass": "Promovemos un entorno respetuoso. Puede reportar acoso laboral a través de este canal para investigación formal.",
+    "submit": "Enviar denuncia"
+  },
+  "privacy": {
+    "title": "Política de datos y privacidad",
+    "lead": "Cómo tratamos la información personal y empresarial en Tecnolpet S.A.",
+    "intro": "Esta política describe la información que procesamos para admitir las aplicaciones y servicios provistos por Tecnolpet S.A. Los tipos de información que recopilamos dependen de cómo utilice nuestros productos y servicios.",
+    "updated": "Última revisión: enero 2020",
+    "contactNote": "Para ejercer derechos de acceso, rectificación o eliminación, escriba a mail@tecnolpet.com.",
+    "sections": [
+      {
+        "title": "I. ¿Qué tipo de información recopilamos?",
+        "paragraphs": [
+          "Información y contenido que usted proporciona: recopilamos el contenido, las comunicaciones y otra información que entrega al usar nuestros servicios, incluso al registrarse o enviar formularios de contacto, consultas, empleo o denuncias. Esto puede incluir metadatos asociados a dichos contenidos.",
+          "Redes y relaciones comerciales: recopilamos información sobre clientes, servicios, colaboradores y resultados de servicio necesarios para prestar inspección NDT, ensayos y soporte operativo.",
+          "Uso de productos: recopilamos información sobre cómo usa nuestros productos (acciones, funciones utilizadas, frecuencia y duración), para operar, asegurar y mejorar el servicio.",
+          "Transacciones: si realiza pagos a nuestra organización, podemos recopilar información de la compra o transacción, datos de facturación y contacto necesarios para completar el proceso.",
+          "Información del dispositivo: podemos recopilar datos técnicos del navegador o dispositivo (sistema operativo, tipo de navegador, dirección IP, zona horaria, idioma y datos de cookies) para seguridad, rendimiento y experiencia de uso."
+        ]
+      },
+      {
+        "title": "II. ¿Cómo utilizamos esta información?",
+        "paragraphs": [
+          "Proveer, personalizar y mejorar nuestros productos y servicios de inspección.",
+          "Validar acceso de clientes y colaboradores, y comunicar información operativa cuando corresponda.",
+          "Investigación y desarrollo: desarrollar, probar y mejorar nuestros servicios.",
+          "Seguridad e integridad: verificar cuentas y actividades, prevenir abuso, spam y uso indebido de la plataforma.",
+          "Comunicación: enviarle información sobre productos, políticas y responder cuando nos contacte."
+        ]
+      },
+      {
+        "title": "III. ¿Cómo se comparte esta información?",
+        "paragraphs": [
+          "La información de nuestros clientes se trata de forma confidencial. No se comparte con terceros ni para fines distintos a los previstos, salvo autorización o obligación legal.",
+          "Cuando se requiera compartir información, Tecnolpet solicitará autorización firmada indicando propósito y alcance, salvo cuando la ley o un órgano competente lo exija."
+        ]
+      },
+      {
+        "title": "IV. Base legal para procesar datos",
+        "paragraphs": [
+          "Procesamos datos según sea necesario para cumplir nuestros Términos de uso; con su consentimiento (revocable); y para cumplir obligaciones legales aplicables en Ecuador."
+        ]
+      },
+      {
+        "title": "V. Derechos del titular",
+        "paragraphs": [
+          "Usted puede solicitar acceso, rectificación, portabilidad u oposición al tratamiento de sus datos, así como cancelar suscripciones de comunicaciones de marketing cuando aplique.",
+          "Para ejercer estos derechos, contáctenos en mail@tecnolpet.com o al +593-62378070."
+        ]
+      },
+      {
+        "title": "VI. Retención y eliminación",
+        "paragraphs": [
+          "Almacenamos datos mientras sea necesario para prestar servicios y productos, o mientras existan obligaciones legales o contractuales. En sistemas de reportes, la retención puede ser prolongada según requisitos técnicos y regulatorios.",
+          "Cuando elimine una cuenta o solicite eliminación, eliminamos los elementos relacionados en la medida legalmente posible. El solicitante asume la responsabilidad de dicha petición."
+        ]
+      },
+      {
+        "title": "VII. Solicitudes legales y prevención de daños",
+        "paragraphs": [
+          "Podemos acceder, conservar y compartir información con autoridades cuando creamos de buena fe que la ley lo exige, o para detectar, prevenir y abordar fraude, uso no autorizado, violaciones de términos u otra actividad dañina o ilegal."
+        ]
+      }
+    ]
+  },
+  "terms": {
+    "title": "Términos de uso",
+    "lead": "Condiciones que rigen el uso de tecnolpet.com y de las aplicaciones de Tecnolpet S.A.",
+    "intro": "Estos Términos de uso rigen Tecnolpet S.A. y describen el Servicio de Tecnolpet. Al crear una cuenta en las aplicaciones de Tecnolpet o al usar el sitio y sus aplicaciones, usted acepta estos términos.",
+    "updated": "Última revisión: enero 2020",
+    "sections": [
+      {
+        "title": "El Servicio",
+        "paragraphs": [
+          "Aceptamos proporcionarle el Servicio de Tecnolpet y sus aplicaciones. El Servicio incluye productos, características, aplicaciones, servicios, tecnologías y software que ofrecemos para avanzar en nuestra misión: prestar servicios de calidad en la industria del petróleo y gas e industria general."
+        ]
+      },
+      {
+        "title": "Ambiente positivo, inclusivo y seguro",
+        "paragraphs": [
+          "Desarrollamos herramientas y recursos para que la experiencia de clientes y colaboradores sea positiva e inclusiva. Contamos con equipos y sistemas para combatir abuso, violaciones de políticas y comportamiento dañino o engañoso."
+        ]
+      },
+      {
+        "title": "Tecnología e infraestructura",
+        "paragraphs": [
+          "Creamos y usamos tecnologías que ayudan a personalizar, proteger y mejorar el Servicio. Tecnologías automatizadas también ayudan a garantizar funcionalidad e integridad.",
+          "Para prestar el Servicio podemos almacenar y transferir datos a través de nuestros sistemas, incluso fuera de su país de residencia. Esta infraestructura puede ser propiedad de Tecnolpet S.A. o de terceros autorizados."
+        ]
+      },
+      {
+        "title": "Investigación e innovación",
+        "paragraphs": [
+          "Utilizamos la información que tenemos para estudiar y mejorar el Servicio, y para colaborar en mejoras que beneficien a clientes y colaboradores."
+        ]
+      },
+      {
+        "title": "Política de datos",
+        "paragraphs": [
+          "Brindar el Servicio requiere recopilar y usar información. La Política de datos y privacidad explica cómo recopilamos, usamos y compartimos información, y cómo puede ejercer control sobre ella."
+        ]
+      },
+      {
+        "title": "Sus compromisos",
+        "paragraphs": [
+          "Los servicios de la plataforma están destinados a usuarios con capacidad para realizar actividad comercial.",
+          "Debe tener al menos 18 años.",
+          "No debemos haber deshabilitado previamente su cuenta por violación de la ley o de nuestras políticas.",
+          "Se prohíbe el uso indebido del sitio, la copia no autorizada de materiales propietarios y cualquier actividad que comprometa la seguridad de la plataforma."
+        ]
+      },
+      {
+        "title": "Contenido y servicios",
+        "paragraphs": [
+          "El contenido del sitio es informativo. Las especificaciones de servicio se confirman en cotizaciones y contratos.",
+          "El foro aplicable es el de la República del Ecuador."
+        ]
+      }
+    ]
+  },
+  "footer": {
+    "blurb": "Inspección NDT y ensayos para petróleo, gas e industria en la región amazónica.",
+    "links": "Enlaces",
+    "legal": "Legal",
+    "contact": "Contacto",
+    "rights": "Todos los derechos reservados."
+  },
+  "common": {
+    "learnMore": "Leer más",
+    "backHome": "Volver al inicio"
+  }
+}

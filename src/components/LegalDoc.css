@@ -1,0 +1,45 @@
+.legal-doc {
+  max-width: 48rem;
+}
+
+.legal-doc__intro {
+  font-size: 1.1rem;
+  color: var(--snow-soft);
+  margin-bottom: 0.75rem;
+}
+
+.legal-doc__updated {
+  color: var(--brand-orange);
+  margin-bottom: 2rem;
+}
+
+.legal-doc__sections {
+  display: grid;
+  gap: 1rem;
+}
+
+.legal-doc__section {
+  padding: 1.35rem 1.45rem;
+}
+
+.legal-doc__section h2 {
+  font-size: 1.2rem;
+  margin-bottom: 0.85rem;
+  color: var(--snow);
+}
+
+.legal-doc__section p {
+  margin-bottom: 0.75rem;
+}
+
+.legal-doc__section p:last-child {
+  margin-bottom: 0;
+}
+
+.legal-doc__note {
+  margin-top: 2rem;
+  padding: 1rem 1.15rem;
+  border-left: 3px solid var(--brand-orange);
+  background: rgba(242, 148, 0, 0.08);
+  color: var(--snow);
+}
