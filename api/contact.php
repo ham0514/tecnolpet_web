@@ -1,7 +1,7 @@
 <?php
 /**
  * Tecnolpet contact form handler for cPanel shared hosting.
- * Configure $to before uploading to public_html/api/contact.php
+ * Configure $to / $turnstileSecret before uploading to public_html/api/contact.php
  */
 header('Content-Type: application/json; charset=utf-8');
 header('X-Content-Type-Options: nosniff');
@@ -14,12 +14,64 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
 
 $to = 'mail@tecnolpet.com'; // change if needed
 $from = 'noreply@tecnolpet.com';
+$turnstileSecret = 'REPLACE_WITH_TURNSTILE_SECRET'; // set before going live
 
 function clean($value) {
     $value = is_string($value) ? $value : '';
     $value = trim($value);
     $value = str_replace(["\r", "\n"], ' ', $value);
     return htmlspecialchars($value, ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8');
+}
+
+function verify_turnstile($secret, $token, $remoteIp) {
+    if ($secret === '' || $token === '') {
+        return false;
+    }
+
+    $payload = [
+        'secret' => $secret,
+        'response' => $token,
+    ];
+    if ($remoteIp !== '') {
+        $payload['remoteip'] = $remoteIp;
+    }
+
+    $ch = curl_init('https://challenges.cloudflare.com/turnstile/v0/siteverify');
+    if ($ch === false) {
+        return false;
+    }
+
+    curl_setopt_array($ch, [
+        CURLOPT_POST => true,
+        CURLOPT_POSTFIELDS => http_build_query($payload),
+        CURLOPT_RETURNTRANSFER => true,
+        CURLOPT_TIMEOUT => 10,
+    ]);
+
+    $raw = curl_exec($ch);
+    curl_close($ch);
+
+    if ($raw === false) {
+        return false;
+    }
+
+    $result = json_decode($raw, true);
+    return is_array($result) && !empty($result['success']);
+}
+
+$turnstileToken = trim((string)($_POST['cf-turnstile-response'] ?? ''));
+$remoteIp = $_SERVER['HTTP_CF_CONNECTING_IP']
+    ?? $_SERVER['HTTP_X_FORWARDED_FOR']
+    ?? $_SERVER['REMOTE_ADDR']
+    ?? '';
+if (is_string($remoteIp) && strpos($remoteIp, ',') !== false) {
+    $remoteIp = trim(explode(',', $remoteIp)[0]);
+}
+
+if (!verify_turnstile($turnstileSecret, $turnstileToken, is_string($remoteIp) ? $remoteIp : '')) {
+    http_response_code(403);
+    echo json_encode(['ok' => false, 'error' => 'captcha_failed']);
+    exit;
 }
 
 $name = clean($_POST['name'] ?? '');

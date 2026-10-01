@@ -51,7 +51,7 @@ export function Footer() {
 
       <div className="container site-footer__bottom">
         <span>© {year} Tecnolpet S.A. {t('footer.rights')}</span>
-        <Logo layout="mark-t" className="site-footer__mark" />
+        <Logo layout="mark" className="site-footer__mark" alt="" />
       </div>
     </footer>
   )

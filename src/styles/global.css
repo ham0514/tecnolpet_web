@@ -88,8 +88,11 @@ p {
 }
 
 .container {
-  width: min(100% - 2.5rem, var(--content));
+  width: 100%;
+  max-width: var(--content);
   margin-inline: auto;
+  padding-inline: clamp(1rem, 3vw, 2rem);
+  box-sizing: border-box;
 }
 
 .section {
@@ -218,13 +221,13 @@ p {
   }
 
   .container {
-    width: min(100% - 1.5rem, var(--content));
+    padding-inline: 1rem;
   }
 }
 
 .page-hero {
-  padding-top: calc(var(--header-h) + 3.5rem);
-  padding-bottom: 3.5rem;
+  padding-top: calc(var(--header-h) + 2.5rem);
+  padding-bottom: 2.5rem;
   border-bottom: 1px solid var(--steel-dim);
   background:
     linear-gradient(120deg, rgba(242, 148, 0, 0.08), transparent 40%),
@@ -283,6 +286,15 @@ p {
 
 .form-status.err {
   color: var(--danger);
+}
+
+.turnstile-field {
+  min-height: 65px;
+}
+
+.turnstile-widget {
+  display: flex;
+  justify-content: flex-end;
 }
 
 .sr-only {

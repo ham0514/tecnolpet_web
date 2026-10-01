@@ -43,21 +43,23 @@ export function Logo({
         draggable={false}
       />
     )
-  } else if (layout === 'header' || layout === 'footer') {
-    // Keep banner lockup in chrome (as previously set)
+  } else if (layout === 'header') {
     content = (
       <img
         src={lockupBanner}
         alt={alt}
-        className={`logo-img logo-img--${layout} ${className}`.trim()}
+        className={`logo-img logo-img--header ${className}`.trim()}
         decoding="async"
         draggable={false}
       />
     )
   } else {
-    // Hero only: circle mark with TECNOLPET S.A. beside it
+    // Hero + footer: circle mark with TECNOLPET S.A. beside it
     content = (
-      <span className={`brand-inline brand-inline--hero ${className}`.trim()} aria-label={alt}>
+      <span
+        className={`brand-inline brand-inline--${layout === 'footer' ? 'footer' : 'hero'} ${className}`.trim()}
+        aria-label={alt}
+      >
         <img
           src={markCircle}
           alt=""

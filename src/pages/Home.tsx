@@ -1,66 +1,103 @@
-import { motion, useReducedMotion } from 'framer-motion'
+import { AnimatePresence, motion, useReducedMotion } from 'framer-motion'
+import { useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { Link } from 'react-router-dom'
+import { AnimatedHeadline } from '../components/AnimatedHeadline'
+import { HeroOrb } from '../components/HeroOrb'
 import { Logo } from '../components/Logo'
 import { Reveal } from '../components/Reveal'
 import './Home.css'
 
+const ROTATING_KEYS = ['ndt', 'iso', 'field', 'integrity'] as const
+
 export function HomePage() {
-  const { t } = useTranslation()
+  const { t, i18n } = useTranslation()
   const reduce = useReducedMotion()
+  const [rotateIndex, setRotateIndex] = useState(0)
 
   const whyKeys = ['quality', 'tech', 'integrity', 'pros'] as const
   const segmentKeys = ['ndt', 'tools', 'tests', 'general'] as const
+
+  useEffect(() => {
+    if (reduce) return
+    const id = window.setInterval(() => {
+      setRotateIndex((i) => (i + 1) % ROTATING_KEYS.length)
+    }, 2800)
+    return () => window.clearInterval(id)
+  }, [reduce, i18n.language])
+
+  const rotatingKey = ROTATING_KEYS[rotateIndex]
 
   return (
     <div className="home">
       <section className="home-hero">
         <div className="home-hero__glow" aria-hidden />
-        <div className="home-hero__arcs" aria-hidden />
-        <div className="container home-hero__content">
-          <motion.div
-            initial={reduce ? false : { opacity: 0, y: 24, scale: 0.96 }}
-            animate={{ opacity: 1, y: 0, scale: 1 }}
-            transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
-          >
-            <Logo layout="hero" className="home-hero__logo" />
-          </motion.div>
+        <div className="container home-hero__shell">
+          <div className="home-hero__content">
+            <motion.div
+              initial={reduce ? false : { opacity: 0, y: 24, scale: 0.96 }}
+              animate={{ opacity: 1, y: 0, scale: 1 }}
+              transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
+            >
+              <Logo layout="hero" className="home-hero__logo" />
+            </motion.div>
 
-          <motion.p
-            className="section-kicker mono"
-            initial={reduce ? false : { opacity: 0, x: -16 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ delay: 0.25, duration: 0.6 }}
-          >
-            {t('home.kicker')}
-          </motion.p>
+            <motion.p
+              className="section-kicker mono"
+              initial={reduce ? false : { opacity: 0, x: -16 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ delay: 0.25, duration: 0.6 }}
+            >
+              {t('home.kicker')}
+            </motion.p>
 
-          <motion.h1
-            initial={reduce ? false : { opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.35, duration: 0.7 }}
-          >
-            {t('home.headline')}
-          </motion.h1>
+            <AnimatedHeadline text={t('home.headline')} />
 
-          <motion.p
-            className="home-hero__sub"
-            initial={reduce ? false : { opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.5, duration: 0.7 }}
-          >
-            {t('home.sub')}
-          </motion.p>
+            <motion.div
+              className="home-hero__rotator mono"
+              initial={reduce ? false : { opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.55, duration: 0.5 }}
+              aria-live="polite"
+            >
+              <span className="home-hero__rotator-label">{t('home.rotatorLabel')}</span>
+              <span className="home-hero__rotator-slot">
+                <AnimatePresence mode="wait">
+                  <motion.span
+                    key={`${i18n.language}-${rotatingKey}`}
+                    className="home-hero__rotator-value"
+                    initial={reduce ? false : { y: 14, opacity: 0 }}
+                    animate={{ y: 0, opacity: 1 }}
+                    exit={reduce ? undefined : { y: -14, opacity: 0 }}
+                    transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
+                  >
+                    {t(`home.rotator.${rotatingKey}`)}
+                  </motion.span>
+                </AnimatePresence>
+              </span>
+            </motion.div>
 
-          <motion.div
-            className="btn-row"
-            initial={reduce ? false : { opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.65, duration: 0.6 }}
-          >
-            <Link className="btn" to="/contacto">{t('home.ctaPrimary')}</Link>
-            <Link className="btn btn-ghost" to="/servicios">{t('home.ctaSecondary')}</Link>
-          </motion.div>
+            <motion.p
+              className="home-hero__sub"
+              initial={reduce ? false : { opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.7, duration: 0.7 }}
+            >
+              {t('home.sub')}
+            </motion.p>
+
+            <motion.div
+              className="btn-row"
+              initial={reduce ? false : { opacity: 0, y: 16 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.85, duration: 0.6 }}
+            >
+              <Link className="btn" to="/contacto">{t('home.ctaPrimary')}</Link>
+              <Link className="btn btn-ghost" to="/servicios">{t('home.ctaSecondary')}</Link>
+            </motion.div>
+          </div>
+
+          <HeroOrb />
         </div>
 
         <div className="home-hero__watermark" aria-hidden>

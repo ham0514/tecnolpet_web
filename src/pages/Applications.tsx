@@ -12,7 +12,7 @@ const apps = [
   {
     key: 'tecu',
     code: 'TU',
-    href: 'https://tecu.tecnolpet.com',
+    href: 'https://lms.tecnolpet.com/',
   },
   {
     key: 'candidato',

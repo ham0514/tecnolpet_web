@@ -1,0 +1,26 @@
+.denuncias-layout {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr);
+  align-items: start;
+}
+
+.denuncias-copy {
+  display: grid;
+  gap: 1.25rem;
+}
+
+.denuncias-copy .panel {
+  padding: 1.4rem;
+}
+
+.denuncias-copy h2 {
+  font-size: 1.35rem;
+  margin-bottom: 0.65rem;
+}
+
+@media (max-width: 900px) {
+  .denuncias-layout {
+    grid-template-columns: 1fr;
+  }
+}

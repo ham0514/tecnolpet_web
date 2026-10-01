@@ -28,6 +28,13 @@
   "home": {
     "kicker": "Organismo de inspección · ISO/IEC 17020",
     "headline": "Precisión industrial para la Amazonía energética",
+    "rotatorLabel": "Especialistas en",
+    "rotator": {
+      "ndt": "Inspección NDT acreditada",
+      "iso": "ISO/IEC 17020 · ISO 9001",
+      "field": "Operaciones en campo",
+      "integrity": "Integridad e imparcialidad"
+    },
     "sub": "Somos líderes en ensayos no destructivos y servicios de inspección para petróleo, gas e industria en Ecuador.",
     "ctaPrimary": "Hablar con un experto",
     "ctaSecondary": "Ver servicios NDT",
@@ -178,6 +185,8 @@
     "sending": "Enviando…",
     "success": "Mensaje enviado. Nos pondremos en contacto pronto.",
     "error": "No se pudo enviar. Intente de nuevo o escriba a mail@tecnolpet.com.",
+    "captchaRequired": "Complete la verificación de seguridad antes de enviar.",
+    "captchaFailed": "La verificación de seguridad falló. Inténtelo de nuevo.",
     "mapNote": "Ubicación en El Coca, Orellana."
   },
   "faq": {
@@ -336,7 +345,7 @@
     ]
   },
   "footer": {
-    "blurb": "Inspección NDT y ensayos para petróleo, gas e industria en la región amazónica.",
+    "blurb": "Ubicada en Orellana, Ecuador, desarrolla sus actividades en la industria del petróleo, brindando soluciones en productos y servicios para nuestros clientes estatales y privados, maximizando la capacidad operacional. Contamos con cinco segmentos principales: Servicios de Inspección NDT, Venta - Renta de Herramientas / Equipos, Pruebas de Tensión / Presión / Carga y Servicios Generales.",
     "links": "Enlaces",
     "legal": "Legal",
     "contact": "Contacto",

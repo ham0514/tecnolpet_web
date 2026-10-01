@@ -13,20 +13,14 @@
   object-fit: contain;
 }
 
-/* Header / footer: horizontal banner lockup */
+/* Header: horizontal banner lockup */
 .logo-img--header {
   height: 3.75rem;
   max-width: min(62vw, 22.5rem);
   filter: drop-shadow(0 6px 16px rgba(0, 0, 0, 0.35));
 }
 
-.logo-img--footer {
-  height: 3.5rem;
-  max-width: 20rem;
-  filter: drop-shadow(0 6px 16px rgba(0, 0, 0, 0.35));
-}
-
-/* Hero only: circle mark + TECNOLPET S.A. beside it */
+/* Hero / footer: circle mark + TECNOLPET S.A. beside it */
 .brand-inline {
   display: inline-flex;
   align-items: center;
@@ -64,6 +58,25 @@
   letter-spacing: 0.1em;
   font-size: clamp(0.95rem, 2.2vw, 1.35rem);
   color: var(--brand-orange);
+}
+
+.brand-inline--footer {
+  gap: 0.75rem;
+}
+
+.brand-inline--footer .brand-inline__mark {
+  width: 3.25rem;
+  height: 3.25rem;
+  filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.35));
+}
+
+.brand-inline--footer .brand-inline__name {
+  font-size: 1.2rem;
+  letter-spacing: 0.12em;
+}
+
+.brand-inline--footer .brand-inline__sa {
+  font-size: 0.85rem;
 }
 
 .logo-img--mark {

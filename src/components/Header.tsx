@@ -34,45 +34,55 @@ export function Header() {
   }, [open])
 
   return (
-    <header className={`site-header ${scrolled ? 'is-scrolled' : ''} ${open ? 'is-open' : ''}`}>
-      <div className="container site-header__inner">
-        <Link to="/" className="site-header__brand" onClick={() => setOpen(false)} aria-label="Tecnolpet">
-          <Logo layout="header" />
-        </Link>
-
-        <nav className="site-header__nav" aria-label="Primary">
-          {primary.map((item) => (
-            <NavLink
-              key={item.to}
-              to={item.to}
-              end={'end' in item ? item.end : false}
-              onClick={() => setOpen(false)}
-            >
-              {t(`nav.${item.key}`)}
-            </NavLink>
-          ))}
-        </nav>
-
-        <div className="site-header__actions">
-          <LanguageToggle />
-          <Link to="/contacto" className="btn site-header__cta" onClick={() => setOpen(false)}>
-            {t('nav.cta')}
+    <>
+      <header className={`site-header ${scrolled ? 'is-scrolled' : ''} ${open ? 'is-open' : ''}`}>
+        <div className="container site-header__inner">
+          <Link to="/" className="site-header__brand" onClick={() => setOpen(false)} aria-label="Tecnolpet">
+            <Logo layout="header" />
           </Link>
-          <button
-            type="button"
-            className="site-header__burger"
-            aria-expanded={open}
-            aria-label="Menu"
-            onClick={() => setOpen((v) => !v)}
-          >
-            <span />
-            <span />
-            <span />
-          </button>
-        </div>
-      </div>
 
-      <div className={`site-header__drawer ${open ? 'is-open' : ''}`}>
+          <nav className="site-header__nav" aria-label="Primary">
+            {primary.map((item) => (
+              <NavLink
+                key={item.to}
+                to={item.to}
+                end={'end' in item ? item.end : false}
+                onClick={() => setOpen(false)}
+              >
+                {t(`nav.${item.key}`)}
+              </NavLink>
+            ))}
+          </nav>
+
+          <div className="site-header__actions">
+            <LanguageToggle />
+            <Link to="/contacto" className="btn site-header__cta" onClick={() => setOpen(false)}>
+              {t('nav.cta')}
+            </Link>
+            <button
+              type="button"
+              className="site-header__burger"
+              aria-expanded={open}
+              aria-label="Menu"
+              onClick={() => setOpen((v) => !v)}
+            >
+              <span />
+              <span />
+              <span />
+            </button>
+          </div>
+        </div>
+      </header>
+
+      <button
+        type="button"
+        className={`site-header__scrim ${open ? 'is-open' : ''}`}
+        aria-label="Close menu"
+        tabIndex={open ? 0 : -1}
+        onClick={() => setOpen(false)}
+      />
+
+      <div className={`site-header__drawer ${open ? 'is-open' : ''}`} id="mobile-nav">
         <nav aria-label="Mobile">
           {primary.map((item) => (
             <NavLink
@@ -89,6 +99,6 @@ export function Header() {
           </Link>
         </nav>
       </div>
-    </header>
+    </>
   )
 }

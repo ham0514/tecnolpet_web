@@ -17,8 +17,8 @@
   --font-mono: "IBM Plex Mono", ui-monospace, monospace;
 
   --header-h: 5rem;
-  --section-pad: clamp(4rem, 8vw, 7.5rem);
-  --content: 72rem;
+  --section-pad: clamp(2.75rem, 5.5vw, 5rem);
+  --content: 90rem; /* 1440px — shared page shell */
   --radius: 2px;
   --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
 
