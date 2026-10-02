@@ -1,7 +1,7 @@
 .site-footer {
   margin-top: 2rem;
   border-top: 1px solid var(--steel-dim);
-  background: linear-gradient(180deg, transparent, rgba(0, 0, 0, 0.45));
+  background: linear-gradient(180deg, transparent, var(--overlay));
   padding-top: 3.5rem;
   padding-bottom: 2rem;
 }

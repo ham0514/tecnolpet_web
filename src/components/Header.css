@@ -11,13 +11,13 @@
 
 .site-header.is-scrolled,
 .site-header.is-open {
-  background: #0b0b0c;
+  background: color-mix(in srgb, var(--ink) 88%, transparent);
   border-bottom-color: var(--steel-dim);
   backdrop-filter: blur(14px);
 }
 
 .site-header.is-open {
-  background: #121214;
+  background: var(--graphite);
 }
 
 .site-header__inner {
@@ -136,7 +136,7 @@
     border: 0;
     padding: 0;
     margin: 0;
-    background: rgba(0, 0, 0, 0.62);
+    background: var(--scrim);
     opacity: 0;
     pointer-events: none;
     transition: opacity 0.3s var(--ease-out);
@@ -156,9 +156,9 @@
     bottom: 0;
     z-index: 70;
     width: min(22rem, 88vw);
-    background: #121214;
+    background: var(--graphite);
     border-left: 1px solid var(--steel-dim);
-    box-shadow: -18px 0 48px rgba(0, 0, 0, 0.55);
+    box-shadow: -18px 0 48px var(--shadow);
     padding: calc(var(--header-h) + 1rem) 1.35rem 1.75rem;
     transform: translateX(100%);
     transition: transform 0.35s var(--ease-out);

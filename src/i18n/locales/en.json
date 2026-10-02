@@ -25,6 +25,10 @@
     "en": "EN",
     "label": "Language"
   },
+  "theme": {
+    "toLight": "Switch to light mode",
+    "toDark": "Switch to dark mode"
+  },
   "home": {
     "kicker": "Inspection body · ISO/IEC 17020",
     "headline": "Industrial precision for Amazon energy operations",
@@ -61,6 +65,23 @@
     "aboutTitle": "Your NDT strategic partner",
     "aboutBody": "Based in Ecuador’s Amazon region, we combine skilled people and technology for reliable oil, gas, and industrial inspections.",
     "aboutCta": "About Tecnolpet",
+    "aboutVisual": {
+      "eyebrow": "Why teams trust us",
+      "pillars": {
+        "competence": {
+          "title": "Technical competence",
+          "body": "Accredited NDT methods and calibrated equipment for clear decisions on critical assets."
+        },
+        "impartial": {
+          "title": "True impartiality",
+          "body": "Independent reports with traceability and digital signatures—no conflict of interest."
+        },
+        "field": {
+          "title": "Field-ready operations",
+          "body": "Based in Orellana with nationwide coverage when operations cannot wait."
+        }
+      }
+    },
     "quotesTitle": "Client stories",
     "quotesLead": "Real cooperation, measurable results.",
     "quotes": {

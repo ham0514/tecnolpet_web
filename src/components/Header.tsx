@@ -3,6 +3,7 @@ import { useTranslation } from 'react-i18next'
 import { Link, NavLink } from 'react-router-dom'
 import { LanguageToggle } from './LanguageToggle'
 import { Logo } from './Logo'
+import { ThemeToggle } from './ThemeToggle'
 import './Header.css'
 
 const primary = [
@@ -55,6 +56,7 @@ export function Header() {
           </nav>
 
           <div className="site-header__actions">
+            <ThemeToggle />
             <LanguageToggle />
             <Link to="/contacto" className="btn site-header__cta" onClick={() => setOpen(false)}>
               {t('nav.cta')}

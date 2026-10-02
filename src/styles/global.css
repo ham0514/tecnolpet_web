@@ -20,7 +20,7 @@ body {
   background:
     radial-gradient(1200px 600px at 80% -10%, rgba(242, 148, 0, 0.12), transparent 55%),
     radial-gradient(900px 500px at -10% 20%, rgba(242, 148, 0, 0.06), transparent 50%),
-    linear-gradient(180deg, var(--ink), #050506 40%, var(--ink));
+    linear-gradient(180deg, var(--ink), var(--ink-deep) 40%, var(--ink));
   background-attachment: fixed;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
@@ -34,8 +34,8 @@ body::before {
   z-index: 0;
   opacity: 0.35;
   background-image:
-    linear-gradient(rgba(245, 245, 245, 0.03) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(245, 245, 245, 0.03) 1px, transparent 1px);
+    linear-gradient(var(--grid-line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
   background-size: 64px 64px;
   mask-image: radial-gradient(ellipse at center, black 20%, transparent 75%);
 }
@@ -128,7 +128,7 @@ p {
 
 .btn {
   --btn-bg: var(--brand-orange);
-  --btn-fg: var(--ink);
+  --btn-fg: var(--on-brand);
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -171,7 +171,7 @@ p {
 }
 
 .panel {
-  background: linear-gradient(145deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.01));
+  background: linear-gradient(145deg, var(--panel-shine-a), var(--panel-shine-b));
   border: 1px solid var(--steel-dim);
   position: relative;
   overflow: hidden;
@@ -258,7 +258,7 @@ p {
 .field select {
   width: 100%;
   padding: 0.85rem 1rem;
-  background: rgba(0, 0, 0, 0.35);
+  background: var(--overlay);
   border: 1px solid var(--steel-dim);
   outline: none;
   transition: border-color 0.2s;

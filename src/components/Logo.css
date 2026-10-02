@@ -17,7 +17,7 @@
 .logo-img--header {
   height: 3.75rem;
   max-width: min(62vw, 22.5rem);
-  filter: drop-shadow(0 6px 16px rgba(0, 0, 0, 0.35));
+  filter: drop-shadow(0 6px 16px var(--shadow));
 }
 
 /* Hero / footer: circle mark + TECNOLPET S.A. beside it */
@@ -33,7 +33,7 @@
   object-fit: contain;
   width: clamp(5.5rem, 14vw, 7.75rem);
   height: clamp(5.5rem, 14vw, 7.75rem);
-  filter: drop-shadow(0 12px 28px rgba(0, 0, 0, 0.35));
+  filter: drop-shadow(0 12px 28px var(--shadow));
 }
 
 .brand-inline__text {
@@ -49,7 +49,7 @@
   font-weight: 800;
   letter-spacing: 0.14em;
   font-size: clamp(1.55rem, 4vw, 2.45rem);
-  color: #ffffff;
+  color: var(--snow);
 }
 
 .brand-inline__sa {
@@ -67,7 +67,7 @@
 .brand-inline--footer .brand-inline__mark {
   width: 3.25rem;
   height: 3.25rem;
-  filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.35));
+  filter: drop-shadow(0 4px 12px var(--shadow));
 }
 
 .brand-inline--footer .brand-inline__name {
@@ -88,6 +88,11 @@
   height: min(50vh, 380px);
   width: auto;
   opacity: 0.07;
+}
+
+[data-theme='light'] .logo-img--header,
+[data-theme='light'] .brand-inline__mark {
+  filter: drop-shadow(0 2px 8px rgba(18, 19, 22, 0.18));
 }
 
 @media (max-width: 720px) {

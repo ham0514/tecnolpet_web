@@ -16,6 +16,21 @@
       rel="stylesheet"
     />
     <title>Tecnolpet S.A.</title>
+    <script>
+      (function () {
+        try {
+          var stored = localStorage.getItem('tecnolpet-theme')
+          var theme = stored === 'light' || stored === 'dark' ? stored : 'dark'
+          document.documentElement.dataset.theme = theme
+          document.documentElement.style.colorScheme = theme
+          document.documentElement.lang =
+            localStorage.getItem('tecnolpet-lang') === 'en' ? 'en' : 'es'
+        } catch (e) {
+          document.documentElement.dataset.theme = 'dark'
+          document.documentElement.style.colorScheme = 'dark'
+        }
+      })()
+    </script>
   </head>
   <body>
     <div id="root"></div>

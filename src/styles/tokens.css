@@ -1,8 +1,12 @@
-:root {
+:root,
+[data-theme='dark'] {
   --brand-orange: #f29400;
   --brand-orange-hot: #ffb347;
   --brand-orange-dim: rgba(242, 148, 0, 0.16);
+  --on-brand: #0b0b0c;
+
   --ink: #0b0b0c;
+  --ink-deep: #050506;
   --graphite: #1a1a1c;
   --graphite-2: #242428;
   --steel: #8b8c8e;
@@ -11,6 +15,20 @@
   --snow-soft: rgba(245, 245, 245, 0.72);
   --danger: #ff5c5c;
   --success: #3ecf8e;
+
+  --glass: rgba(11, 11, 12, 0.55);
+  --glass-strong: rgba(8, 8, 9, 0.55);
+  --glass-soft: rgba(11, 11, 12, 0.4);
+  --overlay: rgba(0, 0, 0, 0.35);
+  --scrim: rgba(0, 0, 0, 0.62);
+  --shadow: rgba(0, 0, 0, 0.35);
+  --grid-line: rgba(245, 245, 245, 0.03);
+  --hero-veil: rgba(11, 11, 12, 0.92);
+  --hero-veil-mid: rgba(11, 11, 12, 0.55);
+  --hero-veil-soft: rgba(11, 11, 12, 0.75);
+  --hero-base: #1c1408;
+  --panel-shine-a: rgba(255, 255, 255, 0.04);
+  --panel-shine-b: rgba(255, 255, 255, 0.01);
 
   --font-display: "Syne", system-ui, sans-serif;
   --font-body: "Space Grotesk", system-ui, sans-serif;
@@ -23,4 +41,38 @@
   --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
 
   color-scheme: dark;
+}
+
+[data-theme='light'] {
+  --brand-orange: #e08900;
+  --brand-orange-hot: #f29400;
+  --brand-orange-dim: rgba(224, 137, 0, 0.14);
+  --on-brand: #0b0b0c;
+
+  --ink: #f2f3f5;
+  --ink-deep: #e4e6ea;
+  --graphite: #ffffff;
+  --graphite-2: #eceef1;
+  --steel: #5c5f66;
+  --steel-dim: rgba(92, 95, 102, 0.28);
+  --snow: #121316;
+  --snow-soft: rgba(18, 19, 22, 0.72);
+  --danger: #d64545;
+  --success: #1f9d63;
+
+  --glass: rgba(255, 255, 255, 0.72);
+  --glass-strong: rgba(255, 255, 255, 0.88);
+  --glass-soft: rgba(255, 255, 255, 0.55);
+  --overlay: rgba(18, 19, 22, 0.08);
+  --scrim: rgba(18, 19, 22, 0.35);
+  --shadow: rgba(18, 19, 22, 0.12);
+  --grid-line: rgba(18, 19, 22, 0.05);
+  --hero-veil: rgba(242, 243, 245, 0.92);
+  --hero-veil-mid: rgba(242, 243, 245, 0.65);
+  --hero-veil-soft: rgba(242, 243, 245, 0.8);
+  --hero-base: #efe6d6;
+  --panel-shine-a: rgba(255, 255, 255, 0.92);
+  --panel-shine-b: rgba(255, 255, 255, 0.65);
+
+  color-scheme: light;
 }

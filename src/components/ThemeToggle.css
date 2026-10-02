@@ -1,0 +1,24 @@
+.theme-toggle {
+  appearance: none;
+  display: inline-grid;
+  place-items: center;
+  width: 2.15rem;
+  height: 2.15rem;
+  padding: 0;
+  border: 1px solid var(--steel-dim);
+  background: var(--overlay);
+  color: var(--snow-soft);
+  cursor: pointer;
+  transition: color 0.2s, border-color 0.2s, background 0.2s;
+}
+
+.theme-toggle svg {
+  width: 1.1rem;
+  height: 1.1rem;
+}
+
+.theme-toggle:hover {
+  color: var(--brand-orange);
+  border-color: rgba(242, 148, 0, 0.5);
+  background: var(--brand-orange-dim);
+}

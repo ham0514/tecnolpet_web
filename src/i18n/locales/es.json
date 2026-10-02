@@ -25,6 +25,10 @@
     "en": "EN",
     "label": "Idioma"
   },
+  "theme": {
+    "toLight": "Cambiar a modo claro",
+    "toDark": "Cambiar a modo oscuro"
+  },
   "home": {
     "kicker": "Organismo de inspección · ISO/IEC 17020",
     "headline": "Precisión industrial para la Amazonía energética",
@@ -61,6 +65,23 @@
     "aboutTitle": "Socio estratégico en NDT",
     "aboutBody": "Ubicados en la región amazónica del Ecuador, integramos talento humano y tecnología para inspecciones confiables en petróleo, gas e industria general.",
     "aboutCta": "Conocer Tecnolpet",
+    "aboutVisual": {
+      "eyebrow": "Por qué confían en nosotros",
+      "pillars": {
+        "competence": {
+          "title": "Competencia técnica",
+          "body": "Métodos NDT acreditados y equipos calibrados para decisiones claras en activos críticos."
+        },
+        "impartial": {
+          "title": "Imparcialidad real",
+          "body": "Informes independientes con trazabilidad y firma digital, sin conflicto de interés."
+        },
+        "field": {
+          "title": "Operación en campo",
+          "body": "Base en Orellana y cobertura nacional para responder cuando la operación no puede esperar."
+        }
+      }
+    },
     "quotesTitle": "Historias de clientes",
     "quotesLead": "Cooperación real, resultados medibles.",
     "quotes": {

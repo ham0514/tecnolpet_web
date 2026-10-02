@@ -35,9 +35,9 @@
   border: 1px solid rgba(139, 140, 142, 0.35);
   background:
     linear-gradient(160deg, rgba(242, 148, 0, 0.08), transparent 45%),
-    rgba(11, 11, 12, 0.55);
+    var(--glass);
   backdrop-filter: blur(6px);
-  box-shadow: inset 0 0 24px rgba(0, 0, 0, 0.25);
+  box-shadow: inset 0 0 24px var(--shadow);
   animation: about-float 7.5s ease-in-out infinite;
 }
 

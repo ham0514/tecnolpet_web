@@ -1,7 +1,7 @@
 .lang-toggle {
   display: inline-flex;
   border: 1px solid var(--steel-dim);
-  background: rgba(0, 0, 0, 0.25);
+  background: var(--overlay);
   overflow: hidden;
 }
 
@@ -19,7 +19,7 @@
 
 .lang-toggle button.is-active {
   background: var(--brand-orange);
-  color: var(--ink);
+  color: var(--on-brand);
   font-weight: 700;
 }
 

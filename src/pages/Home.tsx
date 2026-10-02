@@ -4,6 +4,7 @@ import { useTranslation } from 'react-i18next'
 import { Link } from 'react-router-dom'
 import { AnimatedHeadline } from '../components/AnimatedHeadline'
 import { HeroOrb } from '../components/HeroOrb'
+import { HomeAboutVisual } from '../components/HomeAboutVisual'
 import { Logo } from '../components/Logo'
 import { Reveal } from '../components/Reveal'
 import './Home.css'
@@ -169,11 +170,7 @@ export function HomePage() {
             </div>
           </Reveal>
           <Reveal delay={0.1}>
-            <div className="home-about__visual panel">
-              <Logo layout="mark" className="home-about__mark" />
-              <p className="mono">{t('home.trustIso')}</p>
-              <p className="mono">{t('home.trustQms')}</p>
-            </div>
+            <HomeAboutVisual />
           </Reveal>
         </div>
       </section>
