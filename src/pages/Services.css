@@ -203,6 +203,11 @@
   font-size: clamp(1.5rem, 3vw, 2rem);
 }
 
+.services-category-lead {
+  margin: -0.5rem 0 1.25rem;
+  max-width: 42rem;
+}
+
 .services-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));

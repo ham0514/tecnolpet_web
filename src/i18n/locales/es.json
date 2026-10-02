@@ -58,7 +58,7 @@
     "servicesLead": "Cinco líneas integradas para maximizar la capacidad operacional de su operación.",
     "segments": {
       "ndt": { "title": "Inspección NDT", "body": "VT, PT, MT, UT y UTPA acreditados." },
-      "tools": { "title": "Herramientas y equipos", "body": "Venta y renta para operaciones de campo." },
+      "tools": { "title": "Herramientas y equipos", "body": "Equipos y herramientas oil & gas: venta y renta." },
       "tests": { "title": "Tensión / Presión / Carga", "body": "Ensayos destructivos y certificación de izaje." },
       "general": { "title": "Servicios generales", "body": "Soporte complementario para tubería y herramientas." }
     },
@@ -145,10 +145,14 @@
   },
   "services": {
     "title": "Nuestros servicios",
-    "lead": "NDT, ensayos de tensión/carga y servicios complementarios con certificación internacional.",
-    "intro": "Especialistas en END e inspección en todo el Ecuador: VT, MT, PT, UT, UTPA, EMI, inspección de drill pipe, izaje, tanques, tubería, herramientas y equipos, más ensayos destructivos por tensión y carga.",
+    "lead": "NDT, ensayos, venta/renta de equipos y capacitación especializada.",
+    "intro": "Especialistas en END e inspección en todo el Ecuador: VT, MT, PT, UT, UTPA, EMI, inspección de drill pipe, izaje, tanques, tubería, herramientas y equipos, ensayos destructivos, venta/renta y entrenamiento técnico.",
     "ndtTitle": "Categoría inspección NDT",
     "testsTitle": "Categoría ensayos",
+    "rentalTitle": "Categoría venta y renta",
+    "rentalLead": "Herramientas, tuberías y accesorios para maximizar la capacidad operacional en campo.",
+    "trainingTitle": "Categoría capacitación",
+    "trainingLead": "Entrenamiento en NDT, seguridad industrial y tecnología aplicada para equipos de trabajo.",
     "items": {
       "vt": { "code": "VT", "title": "Inspección visual-dimensional", "body": "Servicio VT acreditado para cada técnica aplicable." },
       "mt": { "code": "MT", "title": "Partículas magnéticas", "body": "Inspección MT acreditada para detección de discontinuidades superficiales." },
@@ -167,7 +171,37 @@
       },
       "tension": { "code": "TST", "title": "Pruebas de tensión", "body": "Tensión en elementos y accesorios de izaje." },
       "load": { "code": "LOAD", "title": "Pruebas de carga", "body": "Certificación de tecle, elementos, grúas y más." },
-      "extra": { "code": "SVC", "title": "Servicios complementarios", "body": "Mantenimiento preventivo y correctivo para herramientas y tubería." }
+      "extra": { "code": "SVC", "title": "Servicios complementarios", "body": "Mantenimiento preventivo y correctivo para herramientas y tubería." },
+      "tools": {
+        "code": "TOL",
+        "title": "Herramientas y equipos",
+        "body": "Venta y renta de herramientas y equipos para la industria petrolera y de gas (oil & gas)."
+      },
+      "tubing": {
+        "code": "PIP",
+        "title": "Tuberías",
+        "body": "Disponibilidad de tuberías y componentes tubulares para venta o renta según la necesidad operativa."
+      },
+      "accessories": {
+        "code": "ACC",
+        "title": "Accesorios",
+        "body": "Accesorios y complementos para herramientas y tubería, orientados a continuidad operacional."
+      },
+      "trainNdt": {
+        "code": "TRN",
+        "title": "Entrenamiento NDT",
+        "body": "Capacitación en ensayos no destructivos para fortalecer competencia técnica del personal."
+      },
+      "trainSafety": {
+        "code": "SAF",
+        "title": "Seguridad industrial",
+        "body": "Formación en seguridad industrial para operaciones seguras en entornos petroleros e industriales."
+      },
+      "trainTech": {
+        "code": "TEC",
+        "title": "Tecnología aplicada",
+        "body": "Entrenamiento en tecnología aplicada a inspección, equipos y procesos de campo."
+      }
     },
     "trust": "Servicio confiado por más de 100 clientes locales, con política de calidad y código de conducta en cada entrega."
   },
@@ -225,7 +259,7 @@
     "sideTitle": "Hable con Tecnolpet",
     "sideBody": "Atendemos requerimientos de inspección NDT, ensayos y soporte operacional desde nuestra base en Orellana. Escríbanos o llámenos y le orientamos con el canal correcto.",
     "addressLabel": "Dirección",
-    "address": "Km 7 Vía Orellana - Lago Agrio, El Coca, Orellana, Ecuador.",
+    "address": "Km 7 1/2 Vía Orellana - Lago Agrio, El Coca, Orellana, Ecuador.",
     "phoneLabel": "Llámanos",
     "phone": "+593-62378070 Ext 1101",
     "emailLabel": "Escríbenos",

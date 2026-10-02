@@ -7,6 +7,8 @@ import './Services.css'
 
 const ndt = ['vt', 'mt', 'pt', 'ut', 'emi', 'drillpipe'] as const
 const tests = ['tension', 'load', 'extra'] as const
+const rental = ['tools', 'tubing', 'accessories'] as const
+const training = ['trainNdt', 'trainSafety', 'trainTech'] as const
 
 function ServiceCard({
   itemKey,
@@ -63,6 +65,26 @@ export function ServicesPage() {
           </Reveal>
           <div className="grid-3">
             {tests.map((key, i) => (
+              <ServiceCard key={key} itemKey={key} delay={i * 0.05} />
+            ))}
+          </div>
+
+          <Reveal>
+            <h2 className="services-heading">{t('services.rentalTitle')}</h2>
+            <p className="section-lead services-category-lead">{t('services.rentalLead')}</p>
+          </Reveal>
+          <div className="grid-3">
+            {rental.map((key, i) => (
+              <ServiceCard key={key} itemKey={key} delay={i * 0.05} />
+            ))}
+          </div>
+
+          <Reveal>
+            <h2 className="services-heading">{t('services.trainingTitle')}</h2>
+            <p className="section-lead services-category-lead">{t('services.trainingLead')}</p>
+          </Reveal>
+          <div className="grid-3">
+            {training.map((key, i) => (
               <ServiceCard key={key} itemKey={key} delay={i * 0.05} />
             ))}
           </div>

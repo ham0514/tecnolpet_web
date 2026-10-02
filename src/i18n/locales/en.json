@@ -58,7 +58,7 @@
     "servicesLead": "Five integrated lines to maximize your operational capacity.",
     "segments": {
       "ndt": { "title": "NDT inspection", "body": "Accredited VT, PT, MT, UT, and UTPA." },
-      "tools": { "title": "Tools & equipment", "body": "Sales and rental for field operations." },
+      "tools": { "title": "Tools & equipment", "body": "Oil & gas tools and equipment: sales and rental." },
       "tests": { "title": "Tension / Pressure / Load", "body": "Destructive tests and lifting certification." },
       "general": { "title": "General services", "body": "Complementary support for pipe and tooling." }
     },
@@ -145,10 +145,14 @@
   },
   "services": {
     "title": "Our services",
-    "lead": "NDT, tension/load testing, and complementary services with international certification.",
-    "intro": "NDT and inspection specialists across Ecuador: VT, MT, PT, UT, UTPA, EMI, drill-pipe inspection, lifting, tanks, pipe, tools and equipment, plus destructive tension and load testing.",
+    "lead": "NDT, testing, equipment sales/rental, and specialized training.",
+    "intro": "NDT and inspection specialists across Ecuador: VT, MT, PT, UT, UTPA, EMI, drill-pipe inspection, lifting, tanks, pipe, tools and equipment, destructive testing, sales/rental, and technical training.",
     "ndtTitle": "NDT inspection category",
     "testsTitle": "Testing category",
+    "rentalTitle": "Sales & rental category",
+    "rentalLead": "Tools, tubulars, and accessories to keep field operations moving.",
+    "trainingTitle": "Training category",
+    "trainingLead": "Training in NDT, industrial safety, and applied technology for work teams.",
     "items": {
       "vt": { "code": "VT", "title": "Visual-dimensional inspection", "body": "Accredited VT service for each applicable technique." },
       "mt": { "code": "MT", "title": "Magnetic particle", "body": "Accredited MT for surface discontinuity detection." },
@@ -167,7 +171,37 @@
       },
       "tension": { "code": "TST", "title": "Tension tests", "body": "Tension testing for lifting elements and accessories." },
       "load": { "code": "LOAD", "title": "Load tests", "body": "Certification for hoists, elements, cranes, and more." },
-      "extra": { "code": "SVC", "title": "Complementary services", "body": "Preventive and corrective maintenance for tools and pipe." }
+      "extra": { "code": "SVC", "title": "Complementary services", "body": "Preventive and corrective maintenance for tools and pipe." },
+      "tools": {
+        "code": "TOL",
+        "title": "Tools & equipment",
+        "body": "Sales and rental of tools and equipment for the oil and gas industry."
+      },
+      "tubing": {
+        "code": "PIP",
+        "title": "Tubulars",
+        "body": "Pipe and tubular components available for sale or rental according to operational needs."
+      },
+      "accessories": {
+        "code": "ACC",
+        "title": "Accessories",
+        "body": "Accessories and complements for tools and tubulars, focused on operational continuity."
+      },
+      "trainNdt": {
+        "code": "TRN",
+        "title": "NDT training",
+        "body": "Non-destructive testing training to strengthen technical competence of personnel."
+      },
+      "trainSafety": {
+        "code": "SAF",
+        "title": "Industrial safety",
+        "body": "Industrial safety training for safer operations in oil & gas and industrial environments."
+      },
+      "trainTech": {
+        "code": "TEC",
+        "title": "Applied technology",
+        "body": "Training in technology applied to inspection, equipment, and field processes."
+      }
     },
     "trust": "Trusted by more than 100 local clients, with quality policy and code of conduct on every delivery."
   },
@@ -225,7 +259,7 @@
     "sideTitle": "Talk with Tecnolpet",
     "sideBody": "We support NDT inspection, testing, and operational needs from our base in Orellana. Call or write and we will guide you to the right channel.",
     "addressLabel": "Address",
-    "address": "Km 7 Orellana - Lago Agrio Road, El Coca, Orellana, Ecuador.",
+    "address": "Km 7 1/2 Orellana - Lago Agrio Road, El Coca, Orellana, Ecuador.",
     "phoneLabel": "Call us",
     "phone": "+593-62378070 Ext 1101",
     "emailLabel": "Email us",
