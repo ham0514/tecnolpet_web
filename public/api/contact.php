@@ -15,6 +15,9 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
 $to = 'mail@tecnolpet.com';
 $from = 'noreply@tecnolpet.com';
 $turnstileSecret = 'REPLACE_WITH_TURNSTILE_SECRET'; // set before going live
+$maxAnnexFiles = 5;
+$maxAnnexBytes = 5 * 1024 * 1024;
+$allowedAnnexExt = ['pdf', 'doc', 'docx', 'jpg', 'jpeg', 'png', 'zip'];
 
 function clean($value) {
     $value = is_string($value) ? $value : '';
@@ -59,6 +62,71 @@ function verify_turnstile($secret, $token, $remoteIp) {
     return is_array($result) && !empty($result['success']);
 }
 
+function collect_annexes($fieldName, $maxFiles, $maxBytes, $allowedExt) {
+    if (!isset($_FILES[$fieldName])) {
+        return [];
+    }
+
+    $files = $_FILES[$fieldName];
+    $annexes = [];
+
+    if (!is_array($files['name'])) {
+        $files = [
+            'name' => [$files['name']],
+            'type' => [$files['type']],
+            'tmp_name' => [$files['tmp_name']],
+            'error' => [$files['error']],
+            'size' => [$files['size']],
+        ];
+    }
+
+    $count = count($files['name']);
+    if ($count > $maxFiles) {
+        return false;
+    }
+
+    for ($i = 0; $i < $count; $i++) {
+        if ((int)$files['error'][$i] === UPLOAD_ERR_NO_FILE) {
+            continue;
+        }
+        if ((int)$files['error'][$i] !== UPLOAD_ERR_OK) {
+            return false;
+        }
+        if ((int)$files['size'][$i] > $maxBytes) {
+            return false;
+        }
+
+        $original = (string)$files['name'][$i];
+        $ext = strtolower(pathinfo($original, PATHINFO_EXTENSION));
+        if (!in_array($ext, $allowedExt, true)) {
+            return false;
+        }
+
+        $tmp = (string)$files['tmp_name'][$i];
+        if ($tmp === '' || !is_uploaded_file($tmp)) {
+            return false;
+        }
+
+        $content = file_get_contents($tmp);
+        if ($content === false) {
+            return false;
+        }
+
+        $mime = (string)$files['type'][$i];
+        if ($mime === '') {
+            $mime = 'application/octet-stream';
+        }
+
+        $annexes[] = [
+            'name' => preg_replace('/[^\w.\- ()\[\]]+/u', '_', $original) ?: ('anexo_' . ($i + 1) . '.' . $ext),
+            'mime' => $mime,
+            'content' => $content,
+        ];
+    }
+
+    return $annexes;
+}
+
 $turnstileToken = trim((string)($_POST['cf-turnstile-response'] ?? ''));
 $remoteIp = $_SERVER['HTTP_CF_CONNECTING_IP']
     ?? $_SERVER['HTTP_X_FORWARDED_FOR']
@@ -75,40 +143,150 @@ if (!verify_turnstile($turnstileSecret, $turnstileToken, is_string($remoteIp) ? 
 }
 
 $name = clean($_POST['name'] ?? '');
-$email = filter_var(trim($_POST['email'] ?? ''), FILTER_SANITIZE_EMAIL);
+$emailRaw = trim($_POST['email'] ?? '');
+$email = $emailRaw !== '' ? filter_var($emailRaw, FILTER_SANITIZE_EMAIL) : '';
 $phone = clean($_POST['phone'] ?? '');
 $company = clean($_POST['company'] ?? '');
 $role = clean($_POST['role'] ?? '');
 $cv = clean($_POST['cv'] ?? '');
 $message = trim($_POST['message'] ?? '');
 $formType = clean($_POST['formType'] ?? 'contact');
+$address = clean($_POST['address'] ?? '');
+$complaintType = clean($_POST['complaintType'] ?? '');
+$otherSpecify = clean($_POST['otherSpecify'] ?? '');
+$area = clean($_POST['area'] ?? '');
+$incidentDate = clean($_POST['incidentDate'] ?? '');
+$incidentTime = clean($_POST['incidentTime'] ?? '');
+$location = clean($_POST['location'] ?? '');
+$involved = trim($_POST['involved'] ?? '');
+$relationship = clean($_POST['relationship'] ?? '');
+$anonymous = clean($_POST['anonymous'] ?? '') === '1';
 
-if ($name === '' || !$email || !filter_var($email, FILTER_VALIDATE_EMAIL) || $message === '') {
+if ($formType === 'denuncias') {
+    if ($message === '' || $involved === '' || $location === '' || $incidentDate === '' || $relationship === '') {
+        http_response_code(422);
+        echo json_encode(['ok' => false, 'error' => 'Invalid input']);
+        exit;
+    }
+    if ($anonymous) {
+        if ($name === '') {
+            $name = 'Anónimo';
+        }
+        $email = '';
+        $phone = '';
+    } else {
+        if ($name === '') {
+            http_response_code(422);
+            echo json_encode(['ok' => false, 'error' => 'Invalid input']);
+            exit;
+        }
+        if ($email !== '' && !filter_var($email, FILTER_VALIDATE_EMAIL)) {
+            http_response_code(422);
+            echo json_encode(['ok' => false, 'error' => 'Invalid input']);
+            exit;
+        }
+    }
+} elseif ($name === '' || !$email || !filter_var($email, FILTER_VALIDATE_EMAIL) || $message === '') {
     http_response_code(422);
     echo json_encode(['ok' => false, 'error' => 'Invalid input']);
     exit;
 }
 
-$subject = '[Tecnolpet] ' . strtoupper($formType) . ' — ' . $name;
+$annexes = [];
+if ($formType === 'quejas' || $formType === 'denuncias') {
+    $annexes = collect_annexes('annexes', $maxAnnexFiles, $maxAnnexBytes, $allowedAnnexExt);
+    if ($annexes === false) {
+        http_response_code(422);
+        echo json_encode(['ok' => false, 'error' => 'Invalid attachments']);
+        exit;
+    }
+}
+
+$subjectName = $name !== '' ? $name : 'Anónimo';
+$subject = '[Tecnolpet] ' . strtoupper($formType) . ' — ' . $subjectName;
 
 $body = "Tipo: {$formType}\n"
     . "Nombre: {$name}\n"
-    . "Email: {$email}\n"
+    . "Email: " . ($email !== '' ? $email : '(no proporcionado)') . "\n"
     . "Teléfono: {$phone}\n"
     . "Empresa: {$company}\n"
     . "Cargo: {$role}\n"
-    . "CV: {$cv}\n\n"
-    . "Mensaje:\n{$message}\n";
+    . "CV: {$cv}\n";
 
-$headers = [
-    'MIME-Version: 1.0',
-    'Content-Type: text/plain; charset=UTF-8',
-    'From: Tecnolpet Web <' . $from . '>',
-    'Reply-To: ' . $email,
-    'X-Mailer: PHP/' . phpversion(),
-];
+if ($formType === 'quejas') {
+    $body .= "Dirección: {$address}\n"
+        . "Tipo de inconformidad: {$complaintType}\n"
+        . "Otra (especifique): {$otherSpecify}\n"
+        . "Área/dependencia: {$area}\n"
+        . "Fecha incidencia: {$incidentDate}\n"
+        . "Hora incidencia: {$incidentTime}\n";
 
-$sent = @mail($to, '=?UTF-8?B?' . base64_encode($subject) . '?=', $body, implode("\r\n", $headers));
+    if (count($annexes) > 0) {
+        $names = array_map(static function ($file) {
+            return $file['name'];
+        }, $annexes);
+        $body .= 'Anexos: ' . implode(', ', $names) . "\n";
+    } else {
+        $body .= "Anexos: (ninguno)\n";
+    }
+}
+
+if ($formType === 'denuncias') {
+    $body .= 'Anónimo: ' . ($anonymous ? 'sí' : 'no') . "\n"
+        . "Ubicación: {$location}\n"
+        . "Involucrados: {$involved}\n"
+        . "Fecha incidencia: {$incidentDate}\n"
+        . "Relación: {$relationship}\n";
+
+    if (count($annexes) > 0) {
+        $names = array_map(static function ($file) {
+            return $file['name'];
+        }, $annexes);
+        $body .= 'Anexos: ' . implode(', ', $names) . "\n";
+    } else {
+        $body .= "Anexos: (ninguno)\n";
+    }
+}
+
+$body .= "\nMensaje:\n{$message}\n";
+
+$replyTo = $email !== '' ? $email : $from;
+
+if (count($annexes) > 0) {
+    $boundary = 'tecnolpet_' . md5((string)microtime(true));
+    $headers = [
+        'MIME-Version: 1.0',
+        'Content-Type: multipart/mixed; boundary="' . $boundary . '"',
+        'From: Tecnolpet Web <' . $from . '>',
+        'Reply-To: ' . $replyTo,
+        'X-Mailer: PHP/' . phpversion(),
+    ];
+
+    $payload = "--{$boundary}\r\n"
+        . "Content-Type: text/plain; charset=UTF-8\r\n"
+        . "Content-Transfer-Encoding: 8bit\r\n\r\n"
+        . $body . "\r\n";
+
+    foreach ($annexes as $file) {
+        $payload .= "--{$boundary}\r\n"
+            . 'Content-Type: ' . $file['mime'] . '; name="' . $file['name'] . "\"\r\n"
+            . "Content-Transfer-Encoding: base64\r\n"
+            . 'Content-Disposition: attachment; filename="' . $file['name'] . "\"\r\n\r\n"
+            . chunk_split(base64_encode($file['content'])) . "\r\n";
+    }
+    $payload .= "--{$boundary}--";
+} else {
+    $headers = [
+        'MIME-Version: 1.0',
+        'Content-Type: text/plain; charset=UTF-8',
+        'From: Tecnolpet Web <' . $from . '>',
+        'Reply-To: ' . $replyTo,
+        'X-Mailer: PHP/' . phpversion(),
+    ];
+    $payload = $body;
+}
+
+$sent = @mail($to, '=?UTF-8?B?' . base64_encode($subject) . '?=', $payload, implode("\r\n", $headers));
 
 if (!$sent) {
     http_response_code(500);

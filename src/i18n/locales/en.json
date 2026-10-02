@@ -104,6 +104,26 @@
     "title": "About Tecnolpet",
     "lead": "Committed to quality products and services for oil and gas.",
     "intro": "Based in Orellana, Tecnolpet delivers solutions for public and private clients across five segments: NDT, equipment sales/rental, tension/pressure/load testing, and general services.",
+    "historyTitle": "History",
+    "historyLead": "From the Ecuadorian Amazon to an accredited inspection body for the hydrocarbons industry.",
+    "history": {
+      "origins": {
+        "year": "Origins",
+        "body": "Tecnología y Petróleos Tecnolpet S.A. was built to serve the hydrocarbons industry from the Ecuadorian Amazon, based in Francisco de Orellana (El Coca). From the start we developed local NDT inspection, testing, and operational support for public and private clients."
+      },
+      "y2016": {
+        "year": "2016",
+        "body": "We earned initial ISO/IEC 17020 accreditation with SAE, covering visual-dimensional inspection, magnetic particle testing, penetrant testing, and thickness measurement—strengthening our technical role ahead of drilling and extraction."
+      },
+      "y2018": {
+        "year": "2018",
+        "body": "We expanded the accredited scope and, in December, certified our quality management system to ISO 9001:2015, aligning inspection, lifting, tension, load, and related services with continual improvement."
+      },
+      "today": {
+        "year": "Today",
+        "body": "We operate as a Type A inspection body for the petroleum industry, with traceability, impartiality, and field technical presence on every delivery."
+      }
+    },
     "missionTitle": "Mission",
     "mission": "We provide high-quality tools, equipment, and services that exceed expectations, with strong commitment to people safety and environmental care.",
     "visionTitle": "Vision",
@@ -116,10 +136,12 @@
     "conf": "Employees and subcontractors protect non-public client and supplier information; use is limited to authorized business purposes.",
     "impartialTitle": "Impartiality",
     "impartial": "Leadership and staff act with integrity under a clear code of conduct.",
-    "digitalTitle": "Digital signatures",
-    "digital": "All reports are signed with digital certificates / electronic signature.",
-    "historyTitle": "History",
-    "history": "Since 2015 we have built NDT and testing capability in the Ecuadorian Amazon, evolving with industry demand."
+    "policies": {
+      "quality": "Quality policy",
+      "confidentiality": "Confidentiality",
+      "impartiality": "Impartiality",
+      "social": "Social policy"
+    }
   },
   "services": {
     "title": "Our services",
@@ -247,17 +269,100 @@
   "quejas": {
     "title": "Complaints & appeals",
     "lead": "Formal channel for claims about our services.",
-    "body": "Tecnolpet handles complaints and appeals with impartiality. Describe the case, the service involved, and available evidence. You will receive a response through official channels.",
+    "definitionsTitle": "Key definitions",
+    "complaintTerm": "Complaint",
+    "complaintDef": "An expression of dissatisfaction related to services received from Tecnolpet S.A., submitted by a person or organization.",
+    "appealTerm": "Appeal",
+    "appealDef": "A client request to reconsider a decision made by the inspection body regarding an inspected item.",
+    "howTitle": "How to submit a complaint or appeal",
+    "howLead": "Any client or interested party may raise a concern through the following channels:",
+    "channels": {
+      "email": "Email.",
+      "phone": "By phone.",
+      "inPerson": "In person at our facilities."
+    },
+    "procedureTitle": "Nonconformity procedure",
+    "procedureLead": "Review Tecnolpet S.A.'s formal nonconformity management procedure.",
+    "procedureLink": "Open Procedure",
+    "sections": {
+      "affected": "General details of the affected party",
+      "incident": "Details of the area where the incident occurred",
+      "description": "Description of the complaint, appeal, or suggestion",
+      "annexes": "Annexes"
+    },
+    "fields": {
+      "name": "Full name",
+      "company": "Company",
+      "email": "Email",
+      "phone": "Phone",
+      "address": "Address",
+      "type": "Type of concern",
+      "otherSpecify": "Please specify",
+      "area": "Area / department where the incident occurred",
+      "date": "Incident date",
+      "time": "Incident time",
+      "description": "Description",
+      "annexesHint": "You can upload up to 5 files (PDF, Word, image, or ZIP), max 5 MB each.",
+      "files": "Upload files",
+      "filesError": "Check your files: max 5 files and 5 MB per file."
+    },
+    "types": {
+      "queja": "Complaint",
+      "apelacion": "Appeal",
+      "sugerencia": "Suggestion",
+      "otra": "Other"
+    },
     "submit": "File complaint"
   },
   "denuncias": {
     "title": "Reports",
     "lead": "Anti-corruption, bribery, and workplace harassment.",
+    "antiKicker": "Integrity",
     "antiTitle": "Anti-corruption & bribery",
     "anti": "We reject any form of corruption or bribery. Reports are handled confidentially without undue retaliation.",
+    "harassKicker": "Workplace",
     "harassTitle": "Workplace harassment",
     "harass": "We promote a respectful environment. You may report workplace harassment through this channel for formal investigation.",
-    "submit": "Submit report"
+    "noteTitle": "Channel confidentiality",
+    "note": "This form is a formal reporting channel. Information is used only to assess and investigate the reported case.",
+    "conductKicker": "Policy",
+    "conductTitle": "Code of conduct",
+    "conduct": "Review Tecnolpet S.A.'s code of conduct for the integrity, ethics, and behavior standards expected across the organization.",
+    "conductLink": "Open code of conduct",
+    "formKicker": "Secure channel",
+    "formLead": "Describe the issue as clearly as possible. You can attach evidence and, if you prefer, remain anonymous.",
+    "sections": {
+      "incident": "Incident details",
+      "evidence": "Evidence",
+      "relationship": "Relationship to the organization",
+      "contact": "Contact information"
+    },
+    "fields": {
+      "location": "Where did the incident occur?",
+      "suspicion": "What is your concern about?",
+      "involved": "Who is involved in the matter?",
+      "date": "When did the issue occur?",
+      "files": "Photos or file uploads",
+      "filesHint": "Up to 5 files · PDF, Word, image, or ZIP · max 5 MB each",
+      "filesBrowse": "Browse files",
+      "filesError": "Check your files: max 5 files and 5 MB per file.",
+      "relationship": "Your relationship to the organization",
+      "relationshipPlaceholder": "Select an option",
+      "contactHint": "You may submit anonymously, though we recommend leaving contact details for follow-up.",
+      "anonymous": "Remain anonymous",
+      "anonymousHint": "Name, email, and phone will not be requested.",
+      "anonymousName": "Anonymous",
+      "name": "Name",
+      "email": "Email",
+      "phone": "Phone"
+    },
+    "relationships": {
+      "current": "I am currently an employee",
+      "former": "I am a former employee",
+      "non": "Non-employee (contractor, supplier, partner, or other)"
+    },
+    "submit": "Submit report",
+    "success": "Report submitted. Thank you for reporting it."
   },
   "privacy": {
     "title": "Privacy policy",

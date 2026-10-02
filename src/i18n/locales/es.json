@@ -104,6 +104,26 @@
     "title": "Acerca de Tecnolpet",
     "lead": "Comprometidos con productos y servicios de calidad para la industria del petróleo y gas.",
     "intro": "Ubicada en Orellana, Tecnolpet desarrolla soluciones para clientes estatales y privados, maximizando la capacidad operacional con cinco segmentos principales: NDT, venta/renta de equipos, pruebas de tensión/presión/carga y servicios generales.",
+    "historyTitle": "Historia",
+    "historyLead": "De la Amazonía ecuatoriana a un organismo de inspección acreditado para la industria de hidrocarburos.",
+    "history": {
+      "origins": {
+        "year": "Orígenes",
+        "body": "Tecnología y Petróleos Tecnolpet S.A. nació para servir a la industria de hidrocarburos desde la Amazonía ecuatoriana, con base en Francisco de Orellana (El Coca). Desde el inicio construimos capacidades locales de inspección NDT, ensayos y soporte operacional para clientes estatales y privados."
+      },
+      "y2016": {
+        "year": "2016",
+        "body": "Obtuvimos la acreditación inicial ISO/IEC 17020 ante el SAE, con alcance en inspección visual-dimensional, partículas magnéticas, líquidos penetrantes y medición de espesores, reforzando nuestro rol técnico previo a perforación y extracción."
+      },
+      "y2018": {
+        "year": "2018",
+        "body": "Ampliamos el alcance acreditado y, en diciembre, certificamos el sistema de gestión de calidad ISO 9001:2015, alineando inspección, izaje, tensión, carga y servicios relacionados a la mejora continua."
+      },
+      "today": {
+        "year": "Hoy",
+        "body": "Operamos como organismo de inspección Tipo A para la industria petrolera, con trazabilidad, imparcialidad y presencia técnica en campo en cada entrega."
+      }
+    },
     "missionTitle": "Misión",
     "mission": "Proveemos herramientas, equipos y servicios de alta calidad que superan las expectativas, con alto compromiso en seguridad de las personas y cuidado del medio ambiente.",
     "visionTitle": "Visión",
@@ -116,10 +136,12 @@
     "conf": "Empleados y subcontratistas protegen la información no pública de clientes y proveedores; solo se usa para fines autorizados.",
     "impartialTitle": "Imparcialidad",
     "impartial": "Alta gerencia y todo el cuerpo de trabajo actúan con integridad bajo un código de conducta claro.",
-    "digitalTitle": "Firmas digitales",
-    "digital": "Todos nuestros reportes se firman mediante certificados digitales / firma electrónica.",
-    "historyTitle": "Historia",
-    "history": "Desde 2015 construimos capacidades NDT y de ensayos en la Amazonía ecuatoriana, evolucionando con las demandas de la industria."
+    "policies": {
+      "quality": "Política de calidad",
+      "confidentiality": "Confidencialidad",
+      "impartiality": "Imparcialidad",
+      "social": "Política social"
+    }
   },
   "services": {
     "title": "Nuestros servicios",
@@ -247,17 +269,100 @@
   "quejas": {
     "title": "Quejas y apelaciones",
     "lead": "Canal formal para reclamos sobre nuestros servicios.",
-    "body": "Tecnolpet atiende quejas y apelaciones con imparcialidad. Describa el caso, el servicio involucrado y la evidencia disponible. Recibirá respuesta por los canales oficiales.",
+    "definitionsTitle": "Definiciones clave",
+    "complaintTerm": "Queja",
+    "complaintDef": "Expresión de insatisfacción relacionada con los servicios recibidos por parte de Tecnolpet S.A., presentada por una persona u organización.",
+    "appealTerm": "Apelación",
+    "appealDef": "Solicitud de un cliente para que se reconsidere una decisión tomada por el organismo de inspección en relación con un ítem inspeccionado.",
+    "howTitle": "Cómo presentar una queja o apelación",
+    "howLead": "Cualquier cliente o parte interesada puede manifestar su inconformidad a través de los siguientes medios:",
+    "channels": {
+      "email": "Correo electrónico.",
+      "phone": "Vía telefónica.",
+      "inPerson": "De forma personal en nuestras instalaciones."
+    },
+    "procedureTitle": "Procedimiento de no conformidades",
+    "procedureLead": "Consulte el procedimiento formal de gestión de no conformidades de Tecnolpet S.A.",
+    "procedureLink": "Abrir Procedimiento",
+    "sections": {
+      "affected": "Datos generales del afectado",
+      "incident": "Datos del área donde se produjo el incidente",
+      "description": "Descripción de la queja, apelación o sugerencia",
+      "annexes": "Anexos"
+    },
+    "fields": {
+      "name": "Nombres y apellidos",
+      "company": "Empresa",
+      "email": "Email",
+      "phone": "Teléfono",
+      "address": "Dirección",
+      "type": "Tipo de inconformidad",
+      "otherSpecify": "Especifique",
+      "area": "Área / dependencia donde se produjo la incidencia",
+      "date": "Fecha de la incidencia",
+      "time": "Hora de la incidencia",
+      "description": "Descripción",
+      "annexesHint": "Puede adjuntar hasta 5 archivos (PDF, Word, imagen o ZIP), máximo 5 MB cada uno.",
+      "files": "Subir archivos",
+      "filesError": "Revise los archivos: máximo 5 archivos y 5 MB por archivo."
+    },
+    "types": {
+      "queja": "Queja",
+      "apelacion": "Apelación",
+      "sugerencia": "Sugerencia",
+      "otra": "Otra"
+    },
     "submit": "Registrar queja"
   },
   "denuncias": {
     "title": "Denuncias",
     "lead": "Anticorrupción, soborno y acoso laboral.",
+    "antiKicker": "Integridad",
     "antiTitle": "Anticorrupción y soborno",
     "anti": "Rechazamos cualquier forma de corrupción o soborno. Las denuncias se tratan con confidencialidad y sin represalias indebidas.",
+    "harassKicker": "Ambiente laboral",
     "harassTitle": "Acoso laboral",
     "harass": "Promovemos un entorno respetuoso. Puede reportar acoso laboral a través de este canal para investigación formal.",
-    "submit": "Enviar denuncia"
+    "noteTitle": "Confidencialidad del canal",
+    "note": "Este formulario es un canal formal de denuncia. La información se usa únicamente para evaluar e investigar el caso reportado.",
+    "conductKicker": "Normativa",
+    "conductTitle": "Código de conducta",
+    "conduct": "Consulte el código de conducta de Tecnolpet S.A. para conocer los principios de integridad, ética y comportamiento esperado.",
+    "conductLink": "Abrir código de conducta",
+    "formKicker": "Canal seguro",
+    "formLead": "Describa el hecho con la mayor claridad posible. Puede adjuntar evidencia y, si lo prefiere, permanecer anónimo.",
+    "sections": {
+      "incident": "Detalle del incidente",
+      "evidence": "Evidencia",
+      "relationship": "Relación con la organización",
+      "contact": "Información de contacto"
+    },
+    "fields": {
+      "location": "¿Dónde ha ocurrido el incidente?",
+      "suspicion": "¿De qué trata su sospecha?",
+      "involved": "¿Quién está involucrado en el asunto?",
+      "date": "¿Cuándo ocurrió el incidente?",
+      "files": "Fotos o archivos",
+      "filesHint": "Hasta 5 archivos · PDF, Word, imagen o ZIP · máx. 5 MB c/u",
+      "filesBrowse": "Examinar archivos",
+      "filesError": "Revise los archivos: máximo 5 archivos y 5 MB por archivo.",
+      "relationship": "Su relación con la organización",
+      "relationshipPlaceholder": "Seleccione una opción",
+      "contactHint": "Puede enviar la denuncia de forma anónima, aunque recomendamos dejar datos de contacto para el seguimiento.",
+      "anonymous": "Permanecer anónimo",
+      "anonymousHint": "No se solicitarán nombre, email ni teléfono.",
+      "anonymousName": "Anónimo",
+      "name": "Nombre",
+      "email": "Email",
+      "phone": "Teléfono"
+    },
+    "relationships": {
+      "current": "Soy empleado actual",
+      "former": "Soy exempleado",
+      "non": "No soy empleado (contratista, proveedor, socio u otro)"
+    },
+    "submit": "Enviar denuncia",
+    "success": "Denuncia enviada. Gracias por reportarlo."
   },
   "privacy": {
     "title": "Política de datos y privacidad",
