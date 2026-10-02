@@ -1,5 +1,6 @@
 import { useTranslation } from 'react-i18next'
 import { Link } from 'react-router-dom'
+import { AboutVisual } from '../components/AboutVisual'
 import { PageHero } from '../components/PageHero'
 import { Reveal } from '../components/Reveal'
 import './About.css'
@@ -25,9 +26,12 @@ export function AboutPage() {
       <PageHero titleKey="about.title" leadKey="about.lead" />
       <section className="section">
         <div className="container">
-          <Reveal>
-            <p className="section-lead about-intro">{t('about.intro')}</p>
-          </Reveal>
+          <div className="about-intro-row">
+            <Reveal>
+              <p className="section-lead about-intro">{t('about.intro')}</p>
+            </Reveal>
+            <AboutVisual />
+          </div>
           <div className="grid-2 about-blocks">
             {blocks.map(([title, body], i) => (
               <Reveal key={title} delay={(i % 2) * 0.06}>

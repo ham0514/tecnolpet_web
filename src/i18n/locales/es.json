@@ -103,7 +103,7 @@
   "services": {
     "title": "Nuestros servicios",
     "lead": "NDT, ensayos de tensión/carga y servicios complementarios con certificación internacional.",
-    "intro": "Especialistas en END e inspección en todo el Ecuador: VT, MT, PT, UT, UTPA, izaje, tanques, tubería, herramientas y equipos, más ensayos destructivos por tensión y carga.",
+    "intro": "Especialistas en END e inspección en todo el Ecuador: VT, MT, PT, UT, UTPA, EMI, inspección de drill pipe, izaje, tanques, tubería, herramientas y equipos, más ensayos destructivos por tensión y carga.",
     "ndtTitle": "Categoría inspección NDT",
     "testsTitle": "Categoría ensayos",
     "items": {
@@ -111,6 +111,17 @@
       "mt": { "code": "MT", "title": "Partículas magnéticas", "body": "Inspección MT acreditada para detección de discontinuidades superficiales." },
       "pt": { "code": "PT", "title": "Líquidos penetrantes", "body": "Inspección PT acreditada con procesos controlados." },
       "ut": { "code": "UT", "title": "Ultrasonido industrial", "body": "Espesores acreditados y UTPA de alto rendimiento." },
+      "emi": {
+        "code": "EMI",
+        "title": "Inspección electromagnética (EMI)",
+        "body": "Inspección electromagnética para tubería y componentes tubulares, orientada a detectar pérdida de metal, picaduras y discontinuidades longitudinales o transversales."
+      },
+      "drillpipe": {
+        "code": "DPI",
+        "title": "Inspección de drill pipe",
+        "body": "Evaluación integral de drill pipe y tubería de perforación para oil & gas.",
+        "details": "Visual-dimensional, roscas/conexiones, desgaste/ovalidad y NDT aplicable (EMI, MT, UT u otros). Reportes con trazabilidad y criterio claro: continuar, reparar o retirar."
+      },
       "tension": { "code": "TST", "title": "Pruebas de tensión", "body": "Tensión en elementos y accesorios de izaje." },
       "load": { "code": "LOAD", "title": "Pruebas de carga", "body": "Certificación de tecle, elementos, grúas y más." },
       "extra": { "code": "SVC", "title": "Servicios complementarios", "body": "Mantenimiento preventivo y correctivo para herramientas y tubería." }

@@ -1,4 +1,5 @@
 import { useTranslation } from 'react-i18next'
+import { AppsVisual } from '../components/AppsVisual'
 import { PageHero } from '../components/PageHero'
 import { Reveal } from '../components/Reveal'
 import './Applications.css'
@@ -34,9 +35,12 @@ export function ApplicationsPage() {
       <PageHero titleKey="apps.title" leadKey="apps.lead" />
       <section className="section">
         <div className="container">
-          <Reveal>
-            <p className="section-lead apps-intro">{t('apps.intro')}</p>
-          </Reveal>
+          <div className="apps-intro-row">
+            <Reveal>
+              <p className="section-lead apps-intro">{t('apps.intro')}</p>
+            </Reveal>
+            <AppsVisual />
+          </div>
 
           <div className="grid-2 apps-grid">
             {apps.map((app, i) => (

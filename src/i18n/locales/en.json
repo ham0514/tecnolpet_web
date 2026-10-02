@@ -103,7 +103,7 @@
   "services": {
     "title": "Our services",
     "lead": "NDT, tension/load testing, and complementary services with international certification.",
-    "intro": "NDT and inspection specialists across Ecuador: VT, MT, PT, UT, UTPA, lifting, tanks, pipe, tools and equipment, plus destructive tension and load testing.",
+    "intro": "NDT and inspection specialists across Ecuador: VT, MT, PT, UT, UTPA, EMI, drill-pipe inspection, lifting, tanks, pipe, tools and equipment, plus destructive tension and load testing.",
     "ndtTitle": "NDT inspection category",
     "testsTitle": "Testing category",
     "items": {
@@ -111,6 +111,17 @@
       "mt": { "code": "MT", "title": "Magnetic particle", "body": "Accredited MT for surface discontinuity detection." },
       "pt": { "code": "PT", "title": "Penetrant testing", "body": "Accredited PT with controlled processes." },
       "ut": { "code": "UT", "title": "Industrial ultrasound", "body": "Accredited thickness measurement and high-performance PAUT." },
+      "emi": {
+        "code": "EMI",
+        "title": "Electromagnetic inspection (EMI)",
+        "body": "Electromagnetic inspection for pipe and tubular components, focused on metal loss, pitting, and longitudinal or transverse discontinuities."
+      },
+      "drillpipe": {
+        "code": "DPI",
+        "title": "Drill pipe inspection",
+        "body": "Full evaluation of drill pipe and drilling tubulars for oil & gas.",
+        "details": "Visual-dimensional checks, threads/connections, wear/ovality, and applicable NDT (EMI, MT, UT, or others). Traceable reports with a clear call: keep, repair, or retire."
+      },
       "tension": { "code": "TST", "title": "Tension tests", "body": "Tension testing for lifting elements and accessories." },
       "load": { "code": "LOAD", "title": "Load tests", "body": "Certification for hoists, elements, cranes, and more." },
       "extra": { "code": "SVC", "title": "Complementary services", "body": "Preventive and corrective maintenance for tools and pipe." }

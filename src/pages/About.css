@@ -1,5 +1,186 @@
+/* Intro row: text sets height; visual fills the right side without overflowing */
+.about-intro-row {
+  position: relative;
+  display: block;
+  overflow: hidden;
+}
+
 .about-intro {
-  max-width: 48rem;
+  max-width: min(48rem, calc(100% - 12.5rem));
+  margin: 0;
+}
+
+.about-visual {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: min(11.5rem, 28vw);
+  pointer-events: none;
+}
+
+.about-visual__panel {
+  width: 100%;
+  height: 100%;
+}
+
+.about-visual__rig {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  padding: 0.45rem 0.55rem;
+  border: 1px solid rgba(139, 140, 142, 0.35);
+  background:
+    linear-gradient(160deg, rgba(242, 148, 0, 0.08), transparent 45%),
+    rgba(11, 11, 12, 0.55);
+  backdrop-filter: blur(6px);
+  box-shadow: inset 0 0 24px rgba(0, 0, 0, 0.25);
+  animation: about-float 7.5s ease-in-out infinite;
+}
+
+.about-visual__rig.is-static {
+  animation: none;
+}
+
+.about-visual__header {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.52rem;
+  letter-spacing: 0.1em;
+  color: var(--steel);
+}
+
+.about-visual__pin {
+  width: 0.45rem;
+  height: 0.45rem;
+  border-radius: 50% 50% 50% 0;
+  rotate: -45deg;
+  background: var(--brand-orange);
+  box-shadow: 0 0 10px rgba(242, 148, 0, 0.55);
+  flex-shrink: 0;
+}
+
+.about-visual__year {
+  margin-left: auto;
+  color: var(--brand-orange);
+}
+
+.about-visual__stack {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  gap: 0.15rem;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.about-visual__row {
+  display: grid;
+  grid-template-columns: auto auto 1fr;
+  align-items: center;
+  gap: 0.4rem;
+  opacity: 0.4;
+  transition: opacity 0.3s;
+}
+
+.about-visual__row.is-done {
+  opacity: 0.7;
+}
+
+.about-visual__row.is-active {
+  opacity: 1;
+}
+
+.about-visual__dot {
+  width: 0.35rem;
+  height: 0.35rem;
+  border-radius: 50%;
+  background: rgba(139, 140, 142, 0.55);
+  box-shadow: none;
+  transition: background 0.3s, box-shadow 0.3s;
+}
+
+.about-visual__row.is-active .about-visual__dot,
+.about-visual__row.is-done .about-visual__dot {
+  background: var(--brand-orange);
+}
+
+.about-visual__row.is-active .about-visual__dot {
+  box-shadow: 0 0 8px rgba(242, 148, 0, 0.7);
+}
+
+.about-visual__code {
+  font-size: 0.55rem;
+  letter-spacing: 0.08em;
+  color: var(--steel);
+  min-width: 2.2ch;
+  transition: color 0.3s;
+}
+
+.about-visual__row.is-active .about-visual__code {
+  color: var(--brand-orange);
+}
+
+.about-visual__bar {
+  height: 0.22rem;
+  border: 1px solid rgba(139, 140, 142, 0.3);
+  background: rgba(139, 140, 142, 0.12);
+  transform-origin: left center;
+  transition: background 0.3s, border-color 0.3s, transform 0.35s var(--ease-out);
+}
+
+.about-visual__row.is-done .about-visual__bar {
+  background: rgba(242, 148, 0, 0.35);
+  border-color: rgba(242, 148, 0, 0.4);
+}
+
+.about-visual__row.is-active .about-visual__bar {
+  background: linear-gradient(90deg, var(--brand-orange), rgba(242, 148, 0, 0.25));
+  border-color: rgba(242, 148, 0, 0.65);
+  transform: scaleX(1.02);
+  animation: about-bar 2.2s ease-in-out infinite;
+}
+
+.about-visual__readout {
+  display: flex;
+  align-items: baseline;
+  gap: 0.4rem;
+  padding-top: 0.2rem;
+  border-top: 1px solid rgba(139, 140, 142, 0.28);
+  font-size: 0.5rem;
+  letter-spacing: 0.1em;
+  color: var(--steel);
+}
+
+.about-visual__readout strong {
+  color: var(--brand-orange);
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+}
+
+@keyframes about-float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-4px);
+  }
+}
+
+@keyframes about-bar {
+  0%,
+  100% {
+    opacity: 0.7;
+  }
+  50% {
+    opacity: 1;
+  }
 }
 
 .about-blocks {
@@ -28,4 +209,21 @@
 
 .about-related {
   margin-top: 2rem;
+}
+
+@media (max-width: 860px) {
+  .about-intro {
+    max-width: 48rem;
+  }
+
+  .about-visual {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .about-visual__rig,
+  .about-visual__row.is-active .about-visual__bar {
+    animation: none !important;
+  }
 }
