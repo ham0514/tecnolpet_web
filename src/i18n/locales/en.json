@@ -44,7 +44,7 @@
     "ctaSecondary": "Explore NDT services",
     "trustIso": "ISO/IEC 17020",
     "trustQms": "ISO 9001:2015",
-    "trustNdt": "VT · MT · PT · UT · UTPA",
+    "trustNdt": "VT · MT · PT · UT · UTME · EMI",
     "trustRegion": "Orellana, Ecuador",
     "whyTitle": "Why choose us",
     "whyLead": "Track record, integrity, and technology applied to every work order.",
@@ -307,10 +307,49 @@
   "empleo": {
     "title": "Careers",
     "lead": "Join a team that lives excellence in NDT.",
-    "body": "We look for professionals passionate about industrial inspection, safety, and integrity. Submit your application and we will follow up.",
+    "body": "We look for professionals passionate about industrial inspection, safety, and integrity. Submit your application with CV and documents, and we will follow up.",
+    "whyTitle": "Working at Tecnolpet",
+    "lookingTitle": "Profiles of interest",
+    "processTitle": "How to apply",
+    "looking": {
+      "l1": "NDT inspectors and technicians (VT, MT, PT, UT, UTME, EMI).",
+      "l2": "Field operations personnel in oil & gas.",
+      "l3": "Testing, lifting, and operational support technicians.",
+      "l4": "Administrative and technical coordination profiles."
+    },
+    "process": {
+      "s1": "Complete the form and attach your CV (and certificates if applicable).",
+      "s2": "We review your profile against operational needs.",
+      "s3": "If there is a match, we contact you to continue the process."
+    },
+    "formKicker": "Application",
+    "formLead": "Tell us about yourself and attach your CV or supporting documents.",
     "submit": "Submit application",
+    "success": "Application sent. We will review your information and get in touch.",
     "role": "Role of interest",
-    "cv": "CV link or note"
+    "cv": "CV link or note",
+    "roles": {
+      "placeholder": "Select a profile",
+      "ndt": "NDT inspector / technician",
+      "tech": "Testing / lab technician",
+      "ops": "Field operations / oil & gas",
+      "admin": "Administrative / coordination",
+      "other": "Other"
+    },
+    "sections": {
+      "applicant": "Applicant details",
+      "interest": "Interest & message",
+      "documents": "CV & documents"
+    },
+    "fields": {
+      "city": "City / location",
+      "message": "Short introduction / experience",
+      "files": "Attach CV and documents",
+      "filesRequired": "Attach at least one file (CV). You may include certificates.",
+      "filesHint": "Up to 5 files · PDF, Word, image, or ZIP · max 5 MB each",
+      "filesBrowse": "Browse files",
+      "filesError": "Attach at least one valid file: max 5 files and 5 MB per file."
+    }
   },
   "quejas": {
     "title": "Complaints & appeals",

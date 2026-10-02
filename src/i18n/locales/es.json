@@ -44,7 +44,7 @@
     "ctaSecondary": "Ver servicios NDT",
     "trustIso": "ISO/IEC 17020",
     "trustQms": "ISO 9001:2015",
-    "trustNdt": "VT · MT · PT · UT · UTPA",
+    "trustNdt": "VT · MT · PT · UT · UTME · EMI",
     "trustRegion": "Orellana, Ecuador",
     "whyTitle": "Por qué preferirnos",
     "whyLead": "Trayectoria, integridad y tecnología aplicada a cada orden de trabajo.",
@@ -307,10 +307,49 @@
   "empleo": {
     "title": "Empleo",
     "lead": "Únase a un equipo que vive la excelencia en NDT.",
-    "body": "Buscamos profesionales apasionados por la inspección industrial, la seguridad y la integridad. Envíe su postulación y nos pondremos en contacto.",
+    "body": "Buscamos profesionales apasionados por la inspección industrial, la seguridad y la integridad. Envíe su postulación con CV y documentos, y nos pondremos en contacto.",
+    "whyTitle": "Trabajar en Tecnolpet",
+    "lookingTitle": "Perfiles de interés",
+    "processTitle": "Cómo postular",
+    "looking": {
+      "l1": "Inspectores y técnicos NDT (VT, MT, PT, UT, UTME, EMI).",
+      "l2": "Personal de operaciones de campo en oil & gas.",
+      "l3": "Técnicos de ensayos, izaje y soporte operacional.",
+      "l4": "Perfiles administrativos y de coordinación técnica."
+    },
+    "process": {
+      "s1": "Complete el formulario y adjunte su CV (y certificados si aplica).",
+      "s2": "Revisamos su perfil según las necesidades operativas.",
+      "s3": "Si hay coincidencia, lo contactamos para continuar el proceso."
+    },
+    "formKicker": "Postulación",
+    "formLead": "Cuéntenos sobre usted y adjunte su CV u otros documentos de respaldo.",
     "submit": "Enviar postulación",
+    "success": "Postulación enviada. Revisaremos su información y nos pondremos en contacto.",
     "role": "Perfil / cargo de interés",
-    "cv": "Enlace a CV o nota"
+    "cv": "Enlace a CV o nota",
+    "roles": {
+      "placeholder": "Seleccione un perfil",
+      "ndt": "Inspector / técnico NDT",
+      "tech": "Técnico de ensayos / laboratorio",
+      "ops": "Operaciones de campo / oil & gas",
+      "admin": "Administrativo / coordinación",
+      "other": "Otro"
+    },
+    "sections": {
+      "applicant": "Datos del postulante",
+      "interest": "Interés y mensaje",
+      "documents": "CV y documentos"
+    },
+    "fields": {
+      "city": "Ciudad / ubicación",
+      "message": "Presentación breve / experiencia",
+      "files": "Adjuntar CV y documentos",
+      "filesRequired": "Adjunte al menos un archivo (CV). Puede incluir certificados.",
+      "filesHint": "Hasta 5 archivos · PDF, Word, imagen o ZIP · máx. 5 MB c/u",
+      "filesBrowse": "Examinar archivos",
+      "filesError": "Adjunte al menos un archivo válido: máximo 5 archivos y 5 MB por archivo."
+    }
   },
   "quejas": {
     "title": "Quejas y apelaciones",

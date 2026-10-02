@@ -149,6 +149,7 @@ $phone = clean($_POST['phone'] ?? '');
 $company = clean($_POST['company'] ?? '');
 $role = clean($_POST['role'] ?? '');
 $cv = clean($_POST['cv'] ?? '');
+$city = clean($_POST['city'] ?? '');
 $message = trim($_POST['message'] ?? '');
 $formType = clean($_POST['formType'] ?? 'contact');
 $address = clean($_POST['address'] ?? '');
@@ -193,11 +194,16 @@ if ($formType === 'denuncias') {
 }
 
 $annexes = [];
-if ($formType === 'quejas' || $formType === 'denuncias') {
+if ($formType === 'quejas' || $formType === 'denuncias' || $formType === 'empleo') {
     $annexes = collect_annexes('annexes', $maxAnnexFiles, $maxAnnexBytes, $allowedAnnexExt);
     if ($annexes === false) {
         http_response_code(422);
         echo json_encode(['ok' => false, 'error' => 'Invalid attachments']);
+        exit;
+    }
+    if ($formType === 'empleo' && count($annexes) === 0) {
+        http_response_code(422);
+        echo json_encode(['ok' => false, 'error' => 'CV required']);
         exit;
     }
 }
@@ -212,6 +218,18 @@ $body = "Tipo: {$formType}\n"
     . "Empresa: {$company}\n"
     . "Cargo: {$role}\n"
     . "CV: {$cv}\n";
+
+if ($formType === 'empleo') {
+    $body .= "Ciudad: {$city}\n";
+    if (count($annexes) > 0) {
+        $names = array_map(static function ($file) {
+            return $file['name'];
+        }, $annexes);
+        $body .= 'Anexos: ' . implode(', ', $names) . "\n";
+    } else {
+        $body .= "Anexos: (ninguno)\n";
+    }
+}
 
 if ($formType === 'quejas') {
     $body .= "Dirección: {$address}\n"

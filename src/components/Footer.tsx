@@ -24,7 +24,7 @@ export function Footer() {
             <li><Link to="/aplicaciones">{t('nav.apps')}</Link></li>
             <li><Link to="/acreditaciones">{t('nav.accreditations')}</Link></li>
             <li><Link to="/faq">{t('nav.faq')}</Link></li>
-            <li><Link to="/consultas">{t('nav.consultas')}</Link></li>
+            <li><Link to="/contacto">{t('nav.contact')}</Link></li>
             <li><Link to="/empleo">{t('nav.empleo')}</Link></li>
           </ul>
         </div>
