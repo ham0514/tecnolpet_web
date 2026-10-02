@@ -52,7 +52,7 @@ export function HomePage() {
               {t('home.kicker')}
             </motion.p>
 
-            <AnimatedHeadline text={t('home.headline')} />
+            <AnimatedHeadline text={t('home.headline')} accentWords={4} />
 
             <motion.div
               className="home-hero__rotator mono"
