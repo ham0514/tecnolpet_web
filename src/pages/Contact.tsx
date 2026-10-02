@@ -18,9 +18,20 @@ const channels: Array<{
   labelKey: string
   bodyKey: string
   href?: string
+  secondaryKey?: string
+  secondaryHref?: string
+  secondaryNoteKey?: string
 }> = [
   { icon: 'location', labelKey: 'addressLabel', bodyKey: 'address' },
-  { icon: 'phone', labelKey: 'phoneLabel', bodyKey: 'phone', href: 'tel:+59362378070' },
+  {
+    icon: 'phone',
+    labelKey: 'phoneLabel',
+    bodyKey: 'phone',
+    href: 'tel:+59362378070',
+    secondaryKey: 'mobile',
+    secondaryHref: 'https://wa.me/593989839318',
+    secondaryNoteKey: 'mobileWhatsapp',
+  },
   { icon: 'email', labelKey: 'emailLabel', bodyKey: 'email', href: 'mailto:mail@tecnolpet.com' },
   { icon: 'hours', labelKey: 'hoursLabel', bodyKey: 'hours' },
 ]
@@ -56,6 +67,17 @@ export function ContactPage() {
                       </a>
                     ) : (
                       <p className="contact-channel__value">{t(`contact.${channel.bodyKey}`)}</p>
+                    )}
+                    {channel.secondaryKey && channel.secondaryHref && (
+                      <a
+                        className="contact-channel__value contact-channel__value--secondary"
+                        href={channel.secondaryHref}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        {t(`contact.${channel.secondaryKey}`)}
+                        {channel.secondaryNoteKey ? ` · ${t(`contact.${channel.secondaryNoteKey}`)}` : ''}
+                      </a>
                     )}
                   </article>
                 </Reveal>

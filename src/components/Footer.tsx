@@ -43,6 +43,11 @@ export function Footer() {
           <h3 className="mono">{t('footer.contact')}</h3>
           <ul>
             <li><a href="tel:+59362378070">{t('contact.phone')}</a></li>
+            <li>
+              <a href="https://wa.me/593989839318" target="_blank" rel="noopener noreferrer">
+                {t('contact.mobile')} · {t('contact.mobileWhatsapp')}
+              </a>
+            </li>
             <li><a href="mailto:mail@tecnolpet.com">{t('contact.email')}</a></li>
             <li>{t('contact.address')}</li>
           </ul>
