@@ -1,42 +1,14 @@
-import { useEffect, useId, useRef, useState } from 'react'
+import { useRef, useState } from 'react'
 import type { ChangeEvent, FormEvent } from 'react'
 import { useTranslation } from 'react-i18next'
+import { useTurnstile } from '../lib/turnstile'
 
 type Status = 'idle' | 'sending' | 'ok' | 'err'
-type FormError = 'generic' | 'captchaRequired' | 'captchaFailed' | 'files' | null
+type FormError = 'generic' | 'captchaRequired' | 'captchaFailed' | 'captchaMissing' | 'files' | null
 type ComplaintType = 'queja' | 'apelacion' | 'sugerencia' | 'otra'
 
-const SITE_KEY = import.meta.env.VITE_TURNSTILE_SITE_KEY
-const SCRIPT_ID = 'cf-turnstile-script'
-const SCRIPT_SRC =
-  'https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit&onload=onTurnstileLoad'
 const MAX_FILES = 5
 const MAX_FILE_BYTES = 5 * 1024 * 1024
-
-function loadTurnstileScript(): Promise<void> {
-  if (window.turnstile) return Promise.resolve()
-
-  return new Promise((resolve, reject) => {
-    const existing = document.getElementById(SCRIPT_ID) as HTMLScriptElement | null
-    if (existing) {
-      const prev = window.onTurnstileLoad
-      window.onTurnstileLoad = () => {
-        prev?.()
-        resolve()
-      }
-      if (window.turnstile) resolve()
-      return
-    }
-
-    window.onTurnstileLoad = () => resolve()
-    const script = document.createElement('script')
-    script.id = SCRIPT_ID
-    script.src = SCRIPT_SRC
-    script.async = true
-    script.onerror = () => reject(new Error('turnstile-load-failed'))
-    document.head.appendChild(script)
-  })
-}
 
 export function QuejasForm() {
   const { t } = useTranslation()
@@ -45,59 +17,25 @@ export function QuejasForm() {
   const [token, setToken] = useState('')
   const [complaintType, setComplaintType] = useState<ComplaintType>('queja')
   const [fileNames, setFileNames] = useState<string[]>([])
-  const widgetRef = useRef<HTMLDivElement>(null)
-  const widgetIdRef = useRef<string | null>(null)
   const fileInputRef = useRef<HTMLInputElement>(null)
-  const reactId = useId()
 
-  useEffect(() => {
-    if (!SITE_KEY || !widgetRef.current) return
-
-    let cancelled = false
-
-    const mount = async () => {
-      try {
-        await loadTurnstileScript()
-        if (cancelled || !widgetRef.current || !window.turnstile) return
-
-        if (widgetIdRef.current) {
-          window.turnstile.remove(widgetIdRef.current)
-          widgetIdRef.current = null
-        }
-
-        widgetIdRef.current = window.turnstile.render(widgetRef.current, {
-          sitekey: SITE_KEY,
-          theme: 'dark',
-          callback: (value) => {
-            setToken(value)
-            setError((prev) =>
-              prev === 'captchaRequired' || prev === 'captchaFailed' ? null : prev,
-            )
-          },
-          'expired-callback': () => setToken(''),
-          'error-callback': () => setToken(''),
-        })
-      } catch {
-        setError('captchaFailed')
-      }
-    }
-
-    void mount()
-
-    return () => {
-      cancelled = true
-      if (widgetIdRef.current && window.turnstile) {
-        window.turnstile.remove(widgetIdRef.current)
-        widgetIdRef.current = null
-      }
-    }
-  }, [reactId])
+  const { widgetRef, reset, configured } = useTurnstile({
+    onToken: (value) => {
+      setToken(value)
+      setError((prev) =>
+        prev === 'captchaRequired' || prev === 'captchaFailed' ? null : prev,
+      )
+    },
+    onExpire: () => setToken(''),
+    onError: () => {
+      setToken('')
+      setError('captchaFailed')
+    },
+  })
 
   const resetTurnstile = () => {
     setToken('')
-    if (widgetIdRef.current && window.turnstile) {
-      window.turnstile.reset(widgetIdRef.current)
-    }
+    reset()
   }
 
   const onFilesChange = (e: ChangeEvent<HTMLInputElement>) => {
@@ -115,6 +53,12 @@ export function QuejasForm() {
   const onSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     const form = e.currentTarget
+
+    if (!configured) {
+      setStatus('idle')
+      setError('captchaMissing')
+      return
+    }
 
     if (!token) {
       setStatus('idle')
@@ -165,15 +109,17 @@ export function QuejasForm() {
   }
 
   const errorMessage =
-    error === 'captchaRequired'
-      ? t('contact.captchaRequired')
-      : error === 'captchaFailed'
-        ? t('contact.captchaFailed')
-        : error === 'files'
-          ? t('quejas.fields.filesError')
-          : error === 'generic'
-            ? t('contact.error')
-            : null
+    error === 'captchaMissing'
+      ? t('contact.captchaMissing')
+      : error === 'captchaRequired'
+        ? t('contact.captchaRequired')
+        : error === 'captchaFailed'
+          ? t('contact.captchaFailed')
+          : error === 'files'
+            ? t('quejas.fields.filesError')
+            : error === 'generic'
+              ? t('contact.error')
+              : null
 
   const types: ComplaintType[] = ['queja', 'apelacion', 'sugerencia', 'otra']
 
@@ -280,15 +226,19 @@ export function QuejasForm() {
       </fieldset>
 
       <div className="field turnstile-field">
-        <div ref={widgetRef} className="turnstile-widget" />
+        {configured ? (
+          <div ref={widgetRef} className="turnstile-widget" />
+        ) : (
+          <p className="form-status err">{t('contact.captchaMissing')}</p>
+        )}
       </div>
 
-      <button className="btn" type="submit" disabled={status === 'sending'}>
+      <button className="btn" type="submit" disabled={status === 'sending' || !configured}>
         {status === 'sending' ? t('contact.sending') : t('quejas.submit')}
       </button>
 
       {status === 'ok' && <p className="form-status ok">{t('contact.success')}</p>}
-      {errorMessage && <p className="form-status err">{errorMessage}</p>}
+      {errorMessage && configured && <p className="form-status err">{errorMessage}</p>}
     </form>
   )
 }

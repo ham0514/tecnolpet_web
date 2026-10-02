@@ -295,6 +295,7 @@ p {
 .turnstile-widget {
   display: flex;
   justify-content: flex-end;
+  min-height: 65px;
 }
 
 .sr-only {
